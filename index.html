@@ -7,42 +7,136 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
+        /* Estilos generales del cuerpo y fuente */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* Un color de fondo más suave y cálido */
+            background-color: #f0f4f8; /* Un color de fondo suave y cálido */
+            color: #1a202c; /* Color de texto por defecto oscuro para contraste */
+            overflow-x: hidden; /* Evitar desbordamiento horizontal */
         }
+
+        /* Animación de entrada para las tarjetas */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.5s ease-out forwards;
+            animation-delay: var(--delay); /* Usar variable CSS para el retraso */
+        }
+
+        /* Animación para el título principal */
+        @keyframes bounceIn {
+            0%, 20%, 40%, 60%, 80%, 100% {
+                transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+            0% {
+                opacity: 0;
+                transform: scale3d(0.3, 0.3, 0.3);
+            }
+            20% {
+                transform: scale3d(1.1, 1.1, 1.1);
+            }
+            40% {
+                transform: scale3d(0.9, 0.9, 0.9);
+            }
+            60% {
+                opacity: 1;
+                transform: scale3d(1.03, 1.03, 1.03);
+            }
+            80% {
+                transform: scale3d(0.97, 0.97, 0.97);
+            }
+            100% {
+                opacity: 1;
+                transform: scale3d(1, 1, 1);
+            }
+        }
+        .bounce-in {
+            animation: bounceIn 1s forwards;
+        }
+
+        /* Estilos para las tarjetas de carrera */
         .card {
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            border-radius: 1rem; /* Bordes más redondeados para las tarjetas */
+            border-radius: 1rem; /* Bordes más redondeados */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra sutil por defecto */
+            display: flex; /* Para organizar el contenido y el botón al final */
+            flex-direction: column;
+            overflow: hidden; /* Asegurar que los bordes redondeados se apliquen bien */
+            min-height: 250px; /* Altura mínima para una mejor uniformidad visual */
         }
         .card:hover {
-            transform: translateY(-8px) scale(1.02); /* Efecto de elevación y ligero crecimiento al pasar el ratón */
+            transform: translateY(-8px) scale(1.02); /* Efecto de elevación y ligero crecimiento */
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al hacer hover */
         }
+
+        /* Estilos para los botones primarios */
         .button-primary {
-            background-color: #6366f1; /* Un índigo ligeramente más vibrante */
+            background-color: #6366f1; /* Índigo vibrante */
             color: white;
-            padding: 0.75rem 1.75rem; /* Un poco más de padding */
-            border-radius: 0.75rem; /* Bordes más redondeados para los botones */
+            padding: 0.75rem 1.75rem; /* Espacio interno */
+            border-radius: 0.75rem; /* Bordes redondeados */
             transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-            font-weight: 600; /* Texto más audaz */
+            font-weight: 600; /* Texto audaz */
+            display: inline-block; /* Para centrar el texto si es necesario */
+            text-decoration: none; /* Quitar subrayado del enlace */
+            width: fit-content; /* Ajustar al contenido */
+            align-self: center; /* Centrar el botón dentro de la tarjeta flex */
+            box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3); /* Sombra para el botón */
         }
         .button-primary:hover {
             background-color: #4f46e5; /* Índigo un poco más oscuro al pasar el ratón */
             transform: translateY(-2px); /* Pequeño efecto de "presión" */
+            box-shadow: 0 6px 12px rgba(79, 70, 229, 0.4); /* Sombra más pronunciada al hover */
         }
+
+        /* Estilos para el encabezado pegajoso (sticky header) */
         .sticky-header {
             position: sticky;
             top: 0;
             z-index: 1000;
             background-color: #f0f4f8; /* Coincide con el fondo del body */
-            padding-bottom: 1.5rem; /* Más espacio debajo del header sticky */
-            border-bottom: 1px solid #e2e8f0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Sombra más notoria para el sticky header */
-            border-radius: 0 0 1.5rem 1.5rem; /* Bordes redondeados en la parte inferior del header */
+            padding-bottom: 1.5rem; /* Espacio debajo del header */
+            border-bottom: 1px solid #e2e8f0; /* Línea separadora */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Sombra para el efecto sticky */
+            border-radius: 0 0 1.5rem 1.5rem; /* Bordes redondeados en la parte inferior */
+            background-image: linear-gradient(to right, #6366f1, #8b5cf6); /* Degradado de fondo */
+            color: white; /* Color de texto blanco para el encabezado */
         }
+        .sticky-header h1 {
+            color: white; /* Asegurar que el título principal sea blanco */
+        }
+        .sticky-header .filter-input,
+        .sticky-header .filter-select {
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente blanco para filtros */
+            border-color: rgba(255, 255, 255, 0.5); /* Borde más suave */
+            color: #4f46e5; /* Texto del filtro */
+        }
+        .sticky-header .filter-input::placeholder {
+            color: #888; /* Color del placeholder */
+        }
+        .sticky-header .filter-input:focus,
+        .sticky-header .filter-select:focus {
+            border-color: #ffffff; /* Borde blanco al enfocar */
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5); /* Sombra de enfoque blanca */
+        }
+        /* Hover effect for filter selects */
+        .filter-select:hover {
+            background-color: #e0e7ff; /* Ligeramente más oscuro al hover */
+            border-color: #6366f1; /* Resaltar borde */
+        }
+
+        /* Estilos para el grupo de filtros */
         .filter-group {
             background-color: #ffffff;
             border-radius: 1rem;
@@ -53,23 +147,28 @@
             gap: 1rem; /* Espacio entre los filtros */
             align-items: center;
             justify-content: center; /* Centra los filtros en el contenedor */
+            border: 1px solid #e2e8f0; /* Borde sutil para el grupo de filtros */
         }
+
+        /* Estilos para los selectores e inputs de filtro */
         .filter-select, .filter-input {
-            flex-grow: 1; /* Permite que los elementos de filtro crezcan */
+            flex-grow: 1; /* Permite que los elementos crezcan */
             min-width: 150px; /* Ancho mínimo para cada filtro */
             padding: 0.85rem 1.25rem;
-            border-radius: 0.75rem; /* Bordes más redondeados */
-            border: 2px solid #a78bfa; /* Un borde violeta más suave */
-            background-color: #f5f3ff; /* Fondo ligeramente morado para los selectores */
-            color: #4f46e5;
+            border-radius: 0.75rem; /* Bordes redondeados */
+            border: 2px solid #a78bfa; /* Borde violeta suave */
+            background-color: #f5f3ff; /* Fondo ligeramente morado */
+            color: #4f46e5; /* Color de texto índigo */
             font-weight: 500;
-            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
         }
         .filter-select:focus, .filter-input:focus {
             outline: none;
             border-color: #6366f1; /* Borde más oscuro al enfocar */
             box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3); /* Sombra de enfoque */
         }
+
+        /* Estilos para el mensaje de "no resultados" */
         .no-results {
             text-align: center;
             color: #6b7280;
@@ -81,6 +180,8 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
             font-weight: 500;
         }
+
+        /* Estilos para los títulos de sección (h2) */
         h2 {
             position: relative; /* Para poder usar pseudo-elementos */
             padding-bottom: 0.75rem;
@@ -95,6 +196,8 @@
             background-color: #8b5cf6; /* Color violeta para la línea */
             border-radius: 2px;
         }
+
+        /* Estilos para el texto y enlaces del footer */
         .footer-text {
             color: #888;
         }
@@ -105,14 +208,55 @@
         .footer-link:hover {
             color: #4f46e5;
         }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .sticky-header {
+                flex-direction: column; /* Apilar elementos en pantallas pequeñas */
+                align-items: center;
+                padding-top: 1.5rem; /* Ajustar padding superior en móvil */
+                padding-bottom: 1rem; /* Ajustar padding inferior en móvil */
+            }
+            .sticky-header h1 {
+                font-size: 2.25rem; /* Ajustar tamaño del título principal en móvil */
+                margin-bottom: 0.5rem; /* Espacio debajo del título */
+            }
+            .filter-group {
+                flex-direction: column; /* Apilar filtros verticalmente */
+                width: 100%;
+                padding: 1rem; /* Reducir padding en móvil */
+            }
+            .filter-select, .filter-input {
+                min-width: unset; /* Quitar min-width en móviles */
+                width: 100%; /* Ocupar el ancho completo */
+            }
+            main p {
+                font-size: 1rem; /* Reducir tamaño de texto en main paragraph */
+                margin-bottom: 2rem; /* Ajustar margen inferior */
+            }
+            h2 {
+                font-size: 1.75rem; /* Ajustar tamaño de los títulos de sección en móvil */
+            }
+            .card {
+                padding: 1.25rem; /* Reducir padding de las tarjetas */
+                min-height: 220px; /* Ajustar altura mínima de las tarjetas */
+            }
+            .button-primary {
+                padding: 0.6rem 1.5rem; /* Ajustar padding del botón */
+                font-size: 0.9rem; /* Ajustar tamaño de fuente del botón */
+            }
+        }
     </style>
 </head>
-<body class="antialiased text-gray-800">
-    <div class="min-h-screen flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8">
+<body class="antialiased">
+    <div class="min-h-screen flex flex-col items-center py-0 px-4 sm:px-6 lg:px-8">
 
-        <!-- Sticky Header for Search and Filters -->
+        <!-- Encabezado pegajoso para búsqueda y filtros -->
         <div class="w-full max-w-7xl sticky-header flex flex-col md:flex-row justify-between items-center py-6 sm:py-10 mb-4 sm:mb-8 gap-3 sm:gap-6">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-indigo-700 text-center md:text-left tracking-tight">Mendoza Estudia <span class="text-purple-500">🎓</span></h1>
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight bounce-in">Mendoza Estudia <span class="text-purple-300">🎓</span></h1>
+                <!-- La frase redundante ha sido eliminada -->
+            </div>
             <div class="filter-group w-full md:w-auto p-3 sm:p-6 gap-2 sm:gap-4">
                 <input type="text" id="searchInput" onkeyup="filterCourses()" placeholder="Buscar carrera o institución..."
                        class="filter-input">
@@ -138,8 +282,8 @@
             </div>
         </div>
 
-        <main class="w-full max-w-7xl">
-            <p class="text-center text-gray-600 mb-8 text-lg sm:text-xl font-light leading-relaxed">
+        <main class="w-full max-w-7xl mt-8">
+            <p class="text-center text-gray-600 mb-12 text-lg sm:text-xl font-light leading-relaxed">
                 ¡Explora la oferta educativa de Mendoza 2025 y encuentra la carrera perfecta para tu futuro!
             </p>
 
@@ -189,13 +333,16 @@
 
     <script type="module">
         // Importar los datos de las carreras desde el archivo externo careers.js
-        // Asegúrate de que 'careers.js' esté en la misma carpeta que 'index.html'.
         import { careersData } from './careers.js';
 
         // Hacer la función filterCourses globalmente accesible
         window.filterCourses = filterCourses;
 
-        // Función para renderizar las tarjetas de carrera
+        /**
+         * Función para renderizar las tarjetas de carrera en las secciones correspondientes.
+         * Aplica animaciones de entrada a las tarjetas.
+         * @param {Array<Object>} filteredCareers - Un arreglo de objetos de carrera filtrados.
+         */
         function renderCareers(filteredCareers) {
             console.log('renderCareers llamada con', filteredCareers.length, 'carreras filtradas.');
 
@@ -203,7 +350,7 @@
             const mixtaContainer = document.getElementById('mixtaCourses');
             const virtualContainer = document.getElementById('virtualCourses');
 
-            // Limpiar contenedores de tarjetas
+            // Limpiar contenedores de tarjetas antes de renderizar
             presencialContainer.innerHTML = '';
             mixtaContainer.innerHTML = '';
             virtualContainer.innerHTML = '';
@@ -222,9 +369,10 @@
             let virtualCount = 0;
 
             // Llenar los contenedores con las carreras filtradas y contar por modalidad
-            filteredCareers.forEach(career => {
+            filteredCareers.forEach((career, index) => {
                 const cardHtml = `
-                    <div class="course-card bg-white rounded-xl shadow-lg p-6 flex flex-col justify-between card"
+                    <div class="course-card bg-white rounded-xl shadow-lg p-6 flex flex-col justify-between card fade-in-up"
+                         style="--delay: ${index * 0.05}s;"
                          data-modality="${career.modality}"
                          data-institution-type="${career.institutionType}"
                          data-management-type="${career.managementType}">
@@ -232,20 +380,21 @@
                             <h3 class="text-xl font-semibold text-gray-900 mb-2">${career.title}</h3>
                             <p class="text-indigo-600 font-medium mb-1">${career.institution}</p>
                             <p class="text-gray-600 text-sm mb-3">Modalidad: <span class="capitalize font-semibold text-purple-700">${career.modality}</span></p>
-                            <p class="text-gray-700 text-sm mb-4">${career.description}</p>
+                            <p class="text-gray-700 text-sm mb-4 flex-grow">${career.description}</p>
                         </div>
                         <a href="${career.url}" target="_blank" class="button-primary text-center mt-4">
                             Inscribirse / Más Info
                         </a>
                     </div>
                 `;
+                // Se agrupan 'virtual' y 'a distancia' bajo la misma sección "Virtual"
                 if (career.modality === 'presencial') {
                     presencialContainer.innerHTML += cardHtml;
                     presencialCount++;
                 } else if (career.modality === 'mixta') {
                     mixtaContainer.innerHTML += cardHtml;
                     mixtaCount++;
-                } else if (career.modality === 'virtual') {
+                } else if (career.modality === 'virtual' || career.modality === 'a distancia') {
                     virtualContainer.innerHTML += cardHtml;
                     virtualCount++;
                 }
@@ -286,7 +435,9 @@
             }
         }
 
-        // Función para filtrar las carreras
+        /**
+         * Función principal para filtrar las carreras según los criterios de búsqueda y los filtros seleccionados.
+         */
         function filterCourses() {
             console.log('filterCourses llamada');
             const searchInput = document.getElementById('searchInput').value.toLowerCase();
@@ -300,7 +451,6 @@
             console.log('  Tipo Institución:', institutionTypeFilter);
             console.log('  Tipo Gestión:', managementTypeFilter);
 
-
             const filteredCareers = careersData.filter(career => {
                 const title = career.title.toLowerCase();
                 const institution = career.institution.toLowerCase();
@@ -310,7 +460,10 @@
                 const managementType = career.managementType;
 
                 const matchesSearch = title.includes(searchInput) || institution.includes(searchInput) || description.includes(searchInput);
-                const matchesModality = modalityFilter === 'all' || modality === modalityFilter;
+                const matchesModality = modalityFilter === 'all' ||
+                                        (modalityFilter === 'virtual' && (modality === 'virtual' || modality === 'a distancia')) ||
+                                        (modality === modalityFilter);
+
                 const matchesInstitutionType = institutionTypeFilter === 'all' || institutionType === institutionTypeFilter;
                 const matchesManagementType = managementTypeFilter === 'all' || managementType === managementTypeFilter;
 
@@ -318,7 +471,6 @@
             });
 
             console.log('Número de carreras filtradas (antes de renderizar):', filteredCareers.length);
-            // console.log('Carreras filtradas (detallado):', filteredCareers); // Descomentar para ver el array completo filtrado
 
             renderCareers(filteredCareers);
         }
@@ -327,6 +479,12 @@
         document.addEventListener('DOMContentLoaded', () => {
             console.log('DOM completamente cargado. Renderizando carreras iniciales.');
             renderCareers(careersData);
+
+            // Aplicar animación al título principal al cargar la página
+            const mainTitle = document.querySelector('.bounce-in');
+            if (mainTitle) {
+                mainTitle.classList.add('animate__animated', 'animate__bounceIn');
+            }
         });
     </script>
 </body>
