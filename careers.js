@@ -522,4 +522,33 @@ export const careersData = [
     managementType: "privada",
     url: "https://www.intercultural.com.ar/"
 },
+// **NUEVAS CARRERAS AGREGADAS - TECNOLÓGICAS 2025**
+{
+    title: "Tecnicatura Superior en Ciencias de Datos e Inteligencia Artificial",
+    institution: "IES (Varios institutos de gestión estatal)",
+    description: "Nueva carrera tecnológica lanzada para el ciclo lectivo 2025, enfocada en análisis de datos y IA.",
+    modality: "presencial",
+    institutionType: "instituto superior",
+    managementType: "pública",
+    url: "https://superior-infd.mendoza.edu.ar/"
+},
+{
+    title: "Tecnicatura Superior en Desarrollo de Software",
+    institution: "IES (Varios institutos de gestión estatal)",
+    description: "Nueva carrera tecnológica lanzada para el ciclo lectivo 2025, especializada en programación y desarrollo.",
+    modality: "presencial",
+    institutionType: "instituto superior",
+    managementType: "pública",
+    url: "https://superior-infd.mendoza.edu.ar/"
+},
+{
+    title: "Tecnicatura Superior en Redes y Ciberseguridad",
+    institution: "IES (Varios institutos de gestión estatal)",
+    description: "Nueva carrera tecnológica lanzada para el ciclo lectivo 2025, enfocada en seguridad informática y redes.",
+    modality: "presencial",
+    institutionType: "instituto superior",
+    managementType: "pública",
+    url: "https://superior-infd.mendoza.edu.ar/"
+},
+
 ];
