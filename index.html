@@ -11,43 +11,99 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* Light blue-gray background */
+            background-color: #f0f4f8; /* Un color de fondo más suave y cálido */
         }
         .card {
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border-radius: 1rem; /* Bordes más redondeados para las tarjetas */
         }
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px) scale(1.02); /* Efecto de elevación y ligero crecimiento al pasar el ratón */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al hacer hover */
         }
         .button-primary {
-            background-color: #4f46e5; /* Indigo */
+            background-color: #6366f1; /* Un índigo ligeramente más vibrante */
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.2s ease-in-out;
+            padding: 0.75rem 1.75rem; /* Un poco más de padding */
+            border-radius: 0.75rem; /* Bordes más redondeados para los botones */
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+            font-weight: 600; /* Texto más audaz */
         }
         .button-primary:hover {
-            background-color: #4338ca; /* Darker indigo */
+            background-color: #4f46e5; /* Índigo un poco más oscuro al pasar el ratón */
+            transform: translateY(-2px); /* Pequeño efecto de "presión" */
         }
         .sticky-header {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background-color: #f0f4f8; /* Match body background */
-            padding-bottom: 1rem;
+            background-color: #f0f4f8; /* Coincide con el fondo del body */
+            padding-bottom: 1.5rem; /* Más espacio debajo del header sticky */
             border-bottom: 1px solid #e2e8f0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow for stickiness */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Sombra más notoria para el sticky header */
+            border-radius: 0 0 1.5rem 1.5rem; /* Bordes redondeados en la parte inferior del header */
+        }
+        .filter-group {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-wrap: wrap; /* Permite que los filtros se envuelvan en pantallas pequeñas */
+            gap: 1rem; /* Espacio entre los filtros */
+            align-items: center;
+            justify-content: center; /* Centra los filtros en el contenedor */
+        }
+        .filter-select, .filter-input {
+            flex-grow: 1; /* Permite que los elementos de filtro crezcan */
+            min-width: 150px; /* Ancho mínimo para cada filtro */
+            padding: 0.85rem 1.25rem;
+            border-radius: 0.75rem; /* Bordes más redondeados */
+            border: 2px solid #a78bfa; /* Un borde violeta más suave */
+            background-color: #f5f3ff; /* Fondo ligeramente morado para los selectores */
+            color: #4f46e5;
+            font-weight: 500;
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .filter-select:focus, .filter-input:focus {
+            outline: none;
+            border-color: #6366f1; /* Borde más oscuro al enfocar */
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3); /* Sombra de enfoque */
         }
         .no-results {
             text-align: center;
             color: #6b7280;
-            font-size: 1.125rem; /* text-lg */
-            margin-top: 2rem;
-            padding: 1rem;
+            font-size: 1.25rem; /* text-xl */
+            margin-top: 3rem;
+            padding: 2rem;
             background-color: #fff;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 1rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+            font-weight: 500;
+        }
+        h2 {
+            position: relative; /* Para poder usar pseudo-elementos */
+            padding-bottom: 0.75rem;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 80px; /* Ancho de la línea de acento */
+            height: 4px; /* Grosor de la línea */
+            background-color: #8b5cf6; /* Color violeta para la línea */
+            border-radius: 2px;
+        }
+        .footer-text {
+            color: #888;
+        }
+        .footer-link {
+            color: #6366f1;
+            transition: color 0.2s ease-in-out;
+        }
+        .footer-link:hover {
+            color: #4f46e5;
         }
     </style>
 </head>
@@ -55,26 +111,26 @@
     <div class="min-h-screen flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8">
 
         <!-- Sticky Header for Search and Filters -->
-        <div class="w-full max-w-7xl sticky-header flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
-            <h1 class="text-4xl font-extrabold text-indigo-700 text-center md:text-left">Mendoza Estudia 🎓</h1>
-            <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto items-center md:items-end">
+        <div class="w-full max-w-7xl sticky-header flex flex-col md:flex-row justify-between items-center mb-8 gap-6">
+            <h1 class="text-5xl font-extrabold text-indigo-700 text-center md:text-left tracking-tight">Mendoza Estudia <span class="text-purple-500">🎓</span></h1>
+            <div class="filter-group w-full md:w-auto">
                 <input type="text" id="searchInput" onkeyup="filterCourses()" placeholder="Buscar carrera o institución..."
-                       class="flex-grow p-3 rounded-lg border-2 border-indigo-300 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm text-lg w-full">
+                       class="filter-input">
                 <select id="modalityFilter" onchange="filterCourses()"
-                        class="p-3 rounded-lg border-2 border-indigo-300 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm text-lg w-full sm:w-auto">
+                        class="filter-select">
                     <option value="all">Todas las modalidades</option>
                     <option value="presencial">Presencial</option>
                     <option value="virtual">Virtual</option>
                     <option value="mixta">Mixta</option>
                 </select>
                 <select id="institutionTypeFilter" onchange="filterCourses()"
-                        class="p-3 rounded-lg border-2 border-indigo-300 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm text-lg w-full sm:w-auto">
+                        class="filter-select">
                     <option value="all">Todos los tipos de institución</option>
                     <option value="universidad">Universidad</option>
                     <option value="instituto superior">Instituto Superior</option>
                 </select>
                 <select id="managementTypeFilter" onchange="filterCourses()"
-                        class="p-3 rounded-lg border-2 border-indigo-300 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm text-lg w-full sm:w-auto">
+                        class="filter-select">
                     <option value="all">Toda la gestión</option>
                     <option value="pública">Pública</option>
                     <option value="privada">Privada</option>
@@ -83,14 +139,14 @@
         </div>
 
         <main class="w-full max-w-7xl">
-            <p class="text-center text-gray-600 mb-8 text-lg">
-                ¡Encuentra la carrera de tus sueños en Mendoza! Aquí podrás explorar la oferta educativa dividida en modalidades y tipos de institución.
+            <p class="text-center text-gray-600 mb-10 text-xl font-light leading-relaxed">
+                ¡Explora la vibrante oferta educativa de Mendoza y encuentra la carrera perfecta para tu futuro!
             </p>
 
             <!-- Sección de Carreras Presenciales -->
             <section class="mb-12" id="presencialSection">
-                <h2 class="text-3xl font-bold text-indigo-600 mb-6 border-b-2 border-indigo-400 pb-2">Carreras Presenciales</h2>
-                <div id="presencialCourses" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <h2 class="text-4xl font-bold text-indigo-700 mb-8 mt-10">Carreras Presenciales</h2>
+                <div id="presencialCourses" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Las tarjetas de carrera presencial se generarán aquí dinámicamente -->
                 </div>
                 <div id="noPresencialResults" class="no-results" style="display: none;">
@@ -100,8 +156,8 @@
 
             <!-- Sección de Carreras Mixtas -->
             <section class="mb-12" id="mixtaSection">
-                <h2 class="text-3xl font-bold text-indigo-600 mb-6 border-b-2 border-indigo-400 pb-2">Carreras Mixtas</h2>
-                <div id="mixtaCourses" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <h2 class="text-4xl font-bold text-indigo-700 mb-8 mt-10">Carreras Mixtas</h2>
+                <div id="mixtaCourses" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Las tarjetas de carrera mixta se generarán aquí dinámicamente -->
                 </div>
                 <div id="noMixtaResults" class="no-results" style="display: none;">
@@ -111,8 +167,8 @@
 
             <!-- Sección de Carreras Virtuales -->
             <section id="virtualSection">
-                <h2 class="text-3xl font-bold text-indigo-600 mb-6 border-b-2 border-indigo-400 pb-2">Carreras Virtuales</h2>
-                <div id="virtualCourses" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <h2 class="text-4xl font-bold text-indigo-700 mb-8 mt-10">Carreras Virtuales</h2>
+                <div id="virtualCourses" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Las tarjetas de carrera virtual se generarán aquí dinámicamente -->
                 </div>
                 <div id="noVirtualResults" class="no-results" style="display: none;">
@@ -123,558 +179,49 @@
     </div>
 
     <!-- Footer -->
-    <footer class="w-full max-w-7xl mt-12 py-8 text-center text-gray-500 text-sm border-t border-gray-200">
-        <h3 class="text-lg font-bold text-indigo-700 mb-2">Mendoza Estudia</h3>
-        <p>Desarrollado por Nicolás Maure &copy; Derechos Reservados</p>
-        <p>Contacto: <a href="mailto:nicomau@gmail.com" class="text-indigo-600 hover:underline">nicomau@gmail.com</a></p>
-        <p>Mendoza, Argentina</p>
+    <footer class="w-full max-w-7xl mx-auto mt-16 py-10 text-center text-gray-500 text-base border-t border-gray-200 bg-white rounded-t-xl shadow-inner">
+        <h3 class="text-2xl font-extrabold text-indigo-700 mb-3">Mendoza Estudia</h3>
+        <p class="mb-2 footer-text">Un proyecto de código abierto y colaborativo para el bien social de la comunidad mendocina.</p>
+        <p class="mb-1 footer-text">Desarrollado por Nicolás Maure</p>
+        <p class="mb-4 footer-text">Contacto: <a href="mailto:nicomau@gmail.com" class="footer-link hover:underline">nicomau@gmail.com</a></p>
+        <p class="footer-text">Mendoza, Argentina</p>
     </footer>
 
-    <script>
-        // ESTE ES EL ARREGLO CON TODAS LAS CARRERAS DE MENDOZA, ACTUALIZADO CON INFORMACIÓN DETALLADA.
-        // CADA OBJETO INCLUYE:
-        // - title: Nombre de la carrera.
-        // - institution: Nombre de la institución.
-        // - description: Descripción breve.
-        // - modality: Tipo de cursado ("presencial", "virtual", "mixta").
-        // - institutionType: Tipo de institución ("universidad", "instituto superior").
-        // - managementType: Tipo de gestión ("pública", "privada").
-        // - url: Enlace a la carrera o institución.
-        const careersData = [
-            // --- UNIVERSIDADES PÚBLICAS ---
-            // UNCuyo
-            {
-                title: "Carreras de Grado (varias facultades)",
-                institution: "Universidad Nacional de Cuyo (UNCuyo)",
-                description: "Amplia gama de programas de grado y posgrado en diversas áreas del conocimiento. Predominantemente presenciales con posibilidad de componentes virtuales.",
-                modality: "presencial", // Predominantemente presencial
-                institutionType: "universidad",
-                managementType: "pública",
-                url: "https://www.uncuyo.edu.ar/"
-            },
-            {
-                title: "Licenciatura en Logística",
-                institution: "UNCuyo (Facultad de Ciencias Económicas)",
-                description: "Gestión de la cadena de suministros con modalidad 100% a distancia.",
-                modality: "virtual",
-                institutionType: "universidad",
-                managementType: "pública",
-                url: "https://www.uncuyo.edu.ar/extension/oferta-academica/licenciatura-en-logistica-a-distancia"
-            },
-            {
-                title: "Cursos y Postgrados con componentes virtuales",
-                institution: "UNCuyo (varias facultades)",
-                description: "Diversos programas que incorporan hasta un 50% de carga horaria virtual como parte de su plan de virtualización.",
-                modality: "mixta",
-                institutionType: "universidad",
-                managementType: "pública",
-                url: "https://www.uncuyo.edu.ar/"
-            },
-            // UTN - Facultad Regional Mendoza
-            {
-                title: "Ingeniería Civil, Electromecánica, Electrónica, Química, Sistemas de Información, Telecomunicaciones",
-                institution: "UTN – Facultad Regional Mendoza",
-                description: "Ingenierías técnicas oficiales con fuerte enfoque práctico.",
-                modality: "presencial",
-                institutionType: "universidad",
-                managementType: "pública",
-                url: "https://www4.frm.utn.edu.ar/ingenierias/"
-            },
-            {
-                title: "Licenciatura en Administración de Empresas, Gestión de Empresas Turísticas y Hoteleras, Enseñanza de la Matemática, Higiene y Seguridad en el Trabajo, Enología",
-                institution: "UTN FRM",
-                description: "Licenciaturas en gestión, educación y salud laboral.",
-                modality: "presencial",
-                institutionType: "universidad",
-                managementType: "pública",
-                url: "https://www4.frm.utn.edu.ar/licenciaturas/"
-            },
-            {
-                title: "Tecnicatura Universitaria en Enología, Gestión de Empresas Hoteleras, Gestión de Empresas Turísticas, Higiene y Seguridad, Programación, Producción de Videojuegos",
-                institution: "UTN FRM",
-                description: "Carreras técnicas especializadas para diversas industrias.",
-                modality: "presencial", // Aunque algunas pueden tener componentes virtuales, se listan como presencial implícito
-                institutionType: "universidad",
-                managementType: "pública",
-                url: "https://www4.frm.utn.edu.ar/tecnicaturas-superiores/"
-            },
-            {
-                title: "Especialización en Redes de Datos",
-                institution: "UTN FRM",
-                description: "Posgrado con modalidad a distancia para profesionales.",
-                modality: "virtual",
-                institutionType: "universidad",
-                managementType: "pública",
-                url: "https://www4.frm.utn.edu.ar/category/posgrados/especializaciones/"
-            },
-            {
-                title: "Cursos de Capacitación (Virtuales)",
-                institution: "UTN FRM",
-                description: "Cursos de extensión universitaria y a distancia, como Renovación Credencial Manejo de Autoelevadores y Gestión de Costos Logísticos.",
-                modality: "virtual",
-                institutionType: "universidad",
-                managementType: "pública",
-                url: "https://www4.frm.utn.edu.ar/cursos-a-distancia-y-cursos-de-extension-universitaria/"
-            },
-            {
-                title: "Maestrías y Doctorados",
-                institution: "UTN FRM",
-                description: "Programas avanzados de posgrado.",
-                modality: "presencial", // Implícito, verificar en cada posgrado.
-                institutionType: "universidad",
-                managementType: "pública",
-                url: "https://www4.frm.utn.edu.ar/category/posgrados/"
-            },
-            // UTN - Facultad Regional San Rafael
-            {
-                title: "Ingeniería Civil, Ingeniería Electromecánica",
-                institution: "UTN – Facultad Regional San Rafael",
-                description: "Carreras de ingeniería con enfoque en infraestructura y energía.",
-                modality: "presencial",
-                institutionType: "universidad",
-                managementType: "pública",
-                url: "http://www.ofertaeducativasr.com.ar/universidad-tecnologica-nacional/"
-            },
-            {
-                title: "Ingeniería Industrial",
-                institution: "UTN – Facultad Regional San Rafael",
-                description: "Formación en optimización de procesos industriales con modalidad a distancia.",
-                modality: "virtual",
-                institutionType: "universidad",
-                managementType: "pública",
-                url: "http://www.ofertaeducativasr.com.ar/universidad-tecnologica-nacional/"
-            },
+    <script type="module">
+        // Importar los datos de las carreras desde el archivo externo careers.js
+        // Asegúrate de que 'careers.js' esté en la misma carpeta que 'index.html'.
+        import { careersData } from './careers.js';
 
-            // --- UNIVERSIDADES PRIVADAS ---
-            // Universidad de Mendoza (UM)
-            {
-                title: "Abogacía, Corredor Inmobiliario, Escribanía, Procuración, Lic. en Emprendimientos Inmobiliarios",
-                institution: "Universidad de Mendoza",
-                description: "Oferta en Ciencias Jurídicas y Sociales, predominantemente presencial.",
-                modality: "presencial",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://um.edu.ar/ciencias-juridicas-y-sociales/"
-            },
-            {
-                title: "Arquitectura, Diseño Gráfico, Diseño de Interiores, Diseño de Indumentaria y Textil, Lic. en Diseño",
-                institution: "Universidad de Mendoza",
-                description: "Carreras en Arquitectura, Urbanismo y Diseño, predominantemente presenciales.",
-                modality: "presencial",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://um.edu.ar/arquitectura-urbanismo-y-diseno/"
-            },
-            {
-                title: "Kinesiología, Psicología, Nutrición, Odontología, Medicina",
-                institution: "Universidad de Mendoza",
-                description: "Carreras en Ciencias de la Salud y Medicina, predominantemente presenciales.",
-                modality: "presencial",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://um.edu.ar/ciencias-de-la-salud/"
-            },
-            {
-                title: "Ingeniería en Informática, Electrónica, Industrial",
-                institution: "Universidad de Mendoza",
-                description: "Ingenierías, predominantemente presenciales.",
-                modality: "presencial",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://um.edu.ar/ingenieria/"
-            },
-            {
-                title: "Contador Público, Lic. en Administración de Negocios",
-                institution: "Universidad de Mendoza",
-                description: "Carreras en Ciencias Económicas, predominantemente presenciales.",
-                modality: "presencial",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://um.edu.ar/ciencias-economicas/"
-            },
-            {
-                title: "Cursos de Idiomas (Inglés A1, A2, B1, B2, C1+)",
-                institution: "Universidad de Mendoza (Advanced English Mendoza)",
-                description: "Cursos de inglés completamente en línea, en distintos niveles y duraciones.",
-                modality: "virtual",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://um.edu.ar/en/cursos-idioma/curso-de-ingles-regular/"
-            },
-            // Universidad del Aconcagua (UDA)
-            {
-                title: "Licenciatura en Niñez, Adolescencia y Familia",
-                institution: "Universidad del Aconcagua",
-                description: "Programa de grado en el área social, con modalidad a distancia.",
-                modality: "virtual",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://www.uda.edu.ar/index.php/licenciatura-en-ninez-adolecencia-y-familia-2-md"
-            },
-            {
-                title: "Traductor Público de Inglés, Italiano, Portugués",
-                institution: "Universidad del Aconcagua",
-                description: "Traductorados públicos ofrecidos en modalidad a distancia.",
-                modality: "virtual",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://www.uda.edu.ar/index.php/oferta-educativa/modalidad-distancia-menu"
-            },
-            {
-                title: "Tecnicatura Universitaria en Niñez, Adolescencia y Familia, Seguridad Ciudadana",
-                institution: "Universidad del Aconcagua",
-                description: "Carreras de pregrado a distancia en áreas sociales y de seguridad.",
-                modality: "virtual",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://www.uda.edu.ar/index.php/oferta-educativa/modalidad-distancia-menu"
-            },
-            {
-                title: "Ciclos de Complementación Curricular (Licenciatura en Administración de Salud, Inglés, Niñez, Adolescencia y Familia, Seguridad Ciudadana Integral)",
-                institution: "Universidad del Aconcagua",
-                description: "Programas para complementar estudios previos, todos a distancia.",
-                modality: "virtual",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://www.uda.edu.ar/index.php/oferta-educativa/modalidad-distancia-menu"
-            },
-            {
-                title: "Licenciatura en Dirección Creativa de Diseño y Publicidad (C.C.C.)",
-                institution: "Universidad del Aconcagua",
-                description: "Ciclo de Complementación Curricular con opción mixta, principalmente a distancia.",
-                modality: "mixta",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://www.uda.edu.ar/index.php/licenciatura-direcc-creat-diseno-public"
-            },
-            {
-                title: "Diplomaturas y Cursos",
-                institution: "Universidad del Aconcagua",
-                description: "Oferta variada de formación continua a distancia.",
-                modality: "virtual",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://www.uda.edu.ar/index.php/oferta-educativa/modalidad-distancia-menu"
-            },
-            {
-                title: "Licenciatura en Comercio Internacional, Marketing, Turismo (y otras)",
-                institution: "Universidad del Aconcagua",
-                description: "Carreras de grado ofrecidas en modalidad presencial.",
-                modality: "presencial",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://www.uda.edu.ar/index.php/oferta-educativa-fcsa"
-            },
-            // Universidad Juan Agustín Maza (UMAZA)
-            {
-                title: "Abogacía, Agrimensura, Bioquímica, Comunicación Social, Contador Público, Farmacia, Dirección de Empresas, Enología, Locución, Kinesiología y Fisioterapia, Nutrición, Periodismo, Musicoterapia, Publicidad, Realización Audiovisual, Terapia Ocupacional, Veterinaria, Licenciatura en Matemáticas",
-                institution: "Universidad Juan Agustín Maza",
-                description: "Amplia oferta de carreras de grado presenciales en diversas áreas.",
-                modality: "presencial",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://www.umaza.edu.ar/"
-            },
-            {
-                title: "Licenciatura en Educación Física, Recursos Humanos, Instrumentación Quirúrgica, Anatomía Patológica, Anestesiología, Producción de Bioimágenes, Hemoterapia, Gastronomía",
-                institution: "Universidad Juan Agustín Maza",
-                description: "Licenciaturas con cursado a través del Campus Virtual.",
-                modality: "virtual",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://www.umaza.edu.ar/campus-virtual/"
-            },
-            {
-                title: "Profesorado para Profesionales, Ciclo de Complementación de Podología Universitaria",
-                institution: "Universidad Juan Agustín Maza",
-                description: "Programas ofrecidos en modalidad a distancia a través del Campus Virtual.",
-                modality: "virtual",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://www.umaza.edu.ar/campus-virtual/"
-            },
-            {
-                title: "Recursos Humanos (Ciclo de Complementación a distancia)",
-                institution: "Universidad Juan Agustín Maza",
-                description: "Ciclo de Complementación Curricular de Recursos Humanos, con opción a distancia.",
-                modality: "virtual",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://www.umaza.edu.ar/landings/recursoshumanos/inicio"
-            },
-            // Universidad de Congreso (UC)
-            {
-                title: "Abogacía, Administración, Comercialización, Contador, Economía, Hotelería, Recursos Humanos, Turismo, Comunicación, Periodismo, Arquitectura, Psicología, Kinesiología, Tecnicaturas en Dirección y Producción Audiovisual (y otras)",
-                institution: "Universidad de Congreso",
-                description: "Amplia oferta de carreras presenciales en distintas sedes.",
-                modality: "presencial",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://www.ucongreso.edu.ar/carreras-presenciales/"
-            },
-            {
-                title: "Administración, Comercialización, Economía, Recursos Humanos, Comunicación, Comercio Exterior, Marketing Internacional, Relaciones Económicas Internacionales, Relaciones Internacionales y Gobernanza Global",
-                institution: "Universidad de Congreso",
-                description: "Carreras de grado ofrecidas completamente a distancia desde el primer año.",
-                modality: "virtual",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://www.ucongreso.edu.ar/carreras-a-distancia/"
-            },
-            {
-                title: "Ciclos de Complementación Curricular a distancia (Administración, Comercialización, Recursos Humanos)",
-                institution: "Universidad de Congreso",
-                description: "Programas para complementar estudios previos, en modalidad a distancia.",
-                modality: "virtual",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://www.ucongreso.edu.ar/carreras-a-distancia/"
-            },
-            // Universidad Champagnat (UCH)
-            {
-                title: "Licenciatura en Administración de Empresas, Comercio Internacional, Abogacía y Procuración, Diseño Gráfico y Digital, Sistemas de Información",
-                institution: "Universidad Champagnat",
-                description: "Carreras de grado con modalidad presencial.",
-                modality: "presencial",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://www.uch.edu.ar/"
-            },
-            {
-                title: "Especialización en Docencia en Entornos Digitales (Posgrado), Diplomatura en Entornos Virtuales de Aprendizaje para Educación (Posgrado)",
-                institution: "Universidad Champagnat",
-                description: "Programas de posgrado con enfoque en educación digital y entornos virtuales.",
-                modality: "virtual",
-                institutionType: "universidad",
-                managementType: "privada",
-                url: "https://www.uch.edu.ar/" // Enlace general, ya que no se especifica un URL para los posgrados.
-            },
-
-            // --- INSTITUTOS SUPERIORES PÚBLICOS ---
-            // Instituto Superior de Educación Mendoza (ISEM) - NOTA: El informe lo clasifica como privado, pero en otras fuentes aparece como público. Me baso en el documento provisto.
-            {
-                title: "Profesorado de Educación Inicial, Secundaria en Historia, Secundaria en Geografía",
-                institution: "Instituto Superior de Educación Mendoza (ISEM)",
-                description: "Carreras docentes con validez oficial, predominantemente presenciales. Cuentan con campus virtual de apoyo.",
-                modality: "presencial",
-                institutionType: "instituto superior",
-                managementType: "privada", // Según el informe adjunto
-                url: "https://isem-infd.mendoza.edu.ar/sitio/"
-            },
-            {
-                title: "Tecnicatura Superior en Preceptoría Escolar",
-                institution: "Instituto Superior de Educación Mendoza (ISEM)",
-                description: "Formación técnica para el ámbito escolar, predominantemente presencial. Cuentan con campus virtual de apoyo.",
-                modality: "presencial",
-                institutionType: "instituto superior",
-                managementType: "privada", // Según el informe adjunto
-                url: "https://isem-infd.mendoza.edu.ar/sitio/"
-            },
-            {
-                title: "Cursos de Capacitación (Preceptor Escolar, Secretario Escolar)",
-                institution: "Instituto Superior de Educación Mendoza (ISEM)",
-                description: "Cursos de actualización docente con puntaje y resolución de la DGE.",
-                modality: "presencial", // Implícito, pueden tener apoyo virtual
-                institutionType: "instituto superior",
-                managementType: "privada", // Según el informe adjunto
-                url: "https://isem-infd.mendoza.edu.ar/sitio/capacitacion/"
-            },
-            // Instituto de Educación Física 9-016 Dr. Jorge E. Coll (IEF 9-016)
-            {
-                title: "Profesorado de Educación Física",
-                institution: "IEF 9-016 Dr. Jorge E. Coll",
-                description: "Formación para profesores de educación física en diversas sedes.",
-                modality: "presencial",
-                institutionType: "instituto superior",
-                managementType: "pública",
-                url: "https://ief9-016.edu.ar/profesorado-de-educacion-fisica/"
-            },
-            {
-                title: "Tecnicatura Superior en Actividades de Montaña, Conservación de la Naturaleza, Preparación Física",
-                institution: "IEF 9-016 Dr. Jorge E. Coll",
-                description: "Tecnicaturas con enfoque en actividad física y medio ambiente.",
-                modality: "presencial",
-                institutionType: "instituto superior",
-                managementType: "pública",
-                url: "https://ief9-016.edu.ar/"
-            },
-            {
-                title: "Formación Profesional Guardavidas y Náuticos Andinos",
-                institution: "IEF 9-016 Dr. Jorge E. Coll",
-                description: "Capacitaciones profesionales para actividades acuáticas y de montaña.",
-                modality: "presencial",
-                institutionType: "instituto superior",
-                managementType: "pública",
-                url: "https://ief9-016.edu.ar/"
-            },
-            // I.E.S. Nº 9-011 - Del Atuel
-            {
-                title: "Profesorado de Educación Secundaria en Biología, Geografía, Historia, Informática, Inglés, Lengua y Literatura, Matemática",
-                institution: "I.E.S. Nº 9-011 - Del Atuel",
-                description: "Formación docente en diversas disciplinas, predominantemente presencial.",
-                modality: "presencial",
-                institutionType: "instituto superior",
-                managementType: "pública",
-                url: "https://ies9011-infd.mendoza.edu.ar/sitio/oferta-educativa/"
-            },
-            {
-                title: "Tecnicatura Superior en Turismo & Hotelería, Gastronomía",
-                institution: "I.E.S. Nº 9-011 - Del Atuel",
-                description: "Tecnicaturas en el sector turístico y gastronómico.",
-                modality: "presencial",
-                institutionType: "instituto superior",
-                managementType: "pública",
-                url: "https://ies9011-infd.mendoza.edu.ar/sitio/oferta-educativa/"
-            },
-            // Instituto Tecnológico Universitario (ITU) Mendoza
-            {
-                title: "Tecnicatura Universitaria en Desarrollo de Software, Electricidad y Sistemas de Control Industriales, Gestión de Empresas, Higiene y Seguridad en el Trabajo, Logística y Transporte, Mantenimiento e Instalaciones Industriales, Marketing, Producción Industrial y Automatización, Redes de Datos y Telecomunicaciones",
-                institution: "Instituto Tecnológico Universitario (ITU) Mendoza",
-                description: "Tecnicaturas universitarias que responden a las demandas productivas, con cursado regular y vespertino.",
-                modality: "presencial",
-                institutionType: "instituto superior",
-                managementType: "pública",
-                url: "https://itu.uncuyo.edu.ar/estudios/"
-            },
-            {
-                title: "Cursos y Talleres (ej. Manejo de Autoelevadores, Gestión de Costos Logísticos)",
-                institution: "Instituto Tecnológico Universitario (ITU) Mendoza",
-                description: "Cursos de capacitación, algunos ofrecidos en modalidad virtual.",
-                modality: "mixta", // Algunos cursos virtuales, otros presenciales.
-                institutionType: "instituto superior",
-                managementType: "pública",
-                url: "https://itu.uncuyo.edu.ar/cursos/"
-            },
-            // IES N° 9-001 Gral. José de San Martín
-            {
-                title: "Profesorado de Biología, Educación Especial, Educación Inicial, Educación Primaria, Geografía, Historia, Inglés, Lengua y Literatura, para Técnicos",
-                institution: "IES N° 9-001 Gral. José de San Martín",
-                description: "Variedad de profesorados con apoyo de campus virtual.",
-                modality: "presencial",
-                institutionType: "instituto superior",
-                managementType: "pública",
-                url: "https://ens9001-infd.mendoza.edu.ar/sitio/"
-            },
-            {
-                title: "Tecnicatura en Administración Pública, Comunicación Social, Diseño de Indumentaria, Textil y Accesorios, Higiene y Seguridad Laboral",
-                institution: "IES N° 9-001 Gral. José de San Martín",
-                description: "Tecnicaturas con apoyo de campus virtual.",
-                modality: "presencial",
-                institutionType: "instituto superior",
-                managementType: "pública",
-                url: "https://ens9001-infd.mendoza.edu.ar/sitio/"
-            },
-            // IES 9-002 Tomás Godoy Cruz
-            {
-                title: "Profesorado de Inglés, Artes Visuales, Educación Secundaria en Biología, Educación Especial, Educación Inicial, Educación Primaria, Educación Secundaria en Física, Educación Secundaria en Lengua y Literatura, Educación Secundaria en Matemática, Educación Secundaria en Química",
-                institution: "IES 9-002 Tomás Godoy Cruz",
-                description: "Amplia oferta de profesorados en diversas especialidades.",
-                modality: "presencial",
-                institutionType: "instituto superior",
-                managementType: "pública",
-                url: "https://ens9002-infd.mendoza.edu.ar/sitio/carreras/"
-            },
-            {
-                title: "Tecnicatura en Producción Artística y Artesanal",
-                institution: "IES 9-002 Tomás Godoy Cruz",
-                description: "Formación técnica en el ámbito artístico.",
-                modality: "presencial",
-                institutionType: "instituto superior",
-                managementType: "pública",
-                url: "https://ens9002-infd.mendoza.edu.ar/sitio/carreras/"
-            },
-            // Instituto Superior de Formación Docente y Técnica N° 9-003 Mercedes Tomasa de San Martín de Balcarce
-            {
-                title: "Profesorado de Educación Primaria, Educación Inicial, Educación Especial, para Técnicos (PROTEC)",
-                institution: "IES 9-003 Mercedes Tomasa de San Martín de Balcarce",
-                description: "Programas de formación docente.",
-                modality: "presencial",
-                institutionType: "instituto superior",
-                managementType: "pública",
-                url: "https://ens9003-infd.mendoza.edu.ar/sitio/carreras/"
-            },
-            {
-                title: "Tecnicatura Superior en Locución de Radio y Televisión, Acompañamiento Terapéutico",
-                institution: "IES 9-003 Mercedes Tomasa de San Martín de Balcarce",
-                description: "Tecnicaturas en comunicación y salud.",
-                modality: "presencial",
-                institutionType: "instituto superior",
-                managementType: "pública",
-                url: "https://ens9003-infd.mendoza.edu.ar/sitio/carreras/"
-            },
-            // ISTEEC Mendoza
-            {
-                title: "Administración de Empresas, Administración Pública, Comercio Internacional y Aduana, Contabilidad, Enología e Industria de los Alimentos, Logística, Marketing, Turismo y Hotelería, Recursos Humanos, FP3 Logística Minera",
-                institution: "ISTEEC Mendoza",
-                description: "Carreras técnicas presenciales con enfoque en estudios económicos y técnicos. Cuentan con Campus Virtual.",
-                modality: "presencial",
-                institutionType: "instituto superior",
-                managementType: "pública", // Clasificado como público por algunas fuentes
-                url: "https://isteec.edu.ar/"
-            },
-
-            // --- INSTITUTOS SUPERIORES PRIVADOS ---
-            // Instituto Superior Juan Gutenberg Mendoza
-            {
-                title: "Tecnicatura Superior en Diseño Multimedial",
-                institution: "Instituto Superior Juan Gutenberg",
-                description: "Carrera pionera en Tecnología Gráfica y Diseño Multimedial. El ingreso es mixto (virtual asincrónico y presencial).",
-                modality: "mixta",
-                institutionType: "instituto superior",
-                managementType: "privada",
-                url: "https://institutojgutenberg.edu.ar/"
-            },
-            {
-                title: "Cursos Online (LSA, Administrativo Veterinaria, Secretariado Médico)",
-                institution: "Instituto Superior Juan Gutenberg",
-                description: "Cursos cortos completamente en línea para diversas áreas.",
-                modality: "virtual",
-                institutionType: "instituto superior",
-                managementType: "privada",
-                url: "https://institutojgutenberg.edu.ar/cursos-online-gutenberg/"
-            },
-            // IAV - Instituto Argentino de Ventas Mendoza
-            {
-                title: "Curso de Ejecutivo de Atención Telefónica, Ejecutivo de Venta en Terreno, Ejecutivo de Venta Telefónica, Supervisión y Liderazgo",
-                institution: "IAV - Instituto Argentino de Ventas",
-                description: "Formación profesional especializada en el ámbito de las ventas.",
-                modality: "presencial", // Implícito presencial/mixto
-                institutionType: "instituto superior",
-                managementType: "privada",
-                url: "https://www.educaedu.com.ar/centros/iav--instituto-argentino-de-ventas-uni2721"
-            },
-            // Instituto Intercultural Lenguas Extranjeras - Español Mendoza
-            {
-                title: "Cursos de Lenguas Extranjeras",
-                institution: "Instituto Intercultural Lenguas Extranjeras - Español Mendoza",
-                description: "Cursos de idiomas (ej. Español como Lengua Extranjera) y preparación para exámenes IELTS.",
-                modality: "presencial", // Implícito presencial con posible flexibilidad.
-                institutionType: "instituto superior",
-                managementType: "privada",
-                url: "https://www.intercultural.com.ar/"
-            },
-        ];
+        // Hacer la función filterCourses globalmente accesible
+        window.filterCourses = filterCourses;
 
         // Función para renderizar las tarjetas de carrera
         function renderCareers(filteredCareers) {
+            console.log('renderCareers llamada con', filteredCareers.length, 'carreras filtradas.');
+
             const presencialContainer = document.getElementById('presencialCourses');
             const mixtaContainer = document.getElementById('mixtaCourses');
             const virtualContainer = document.getElementById('virtualCourses');
 
-            // Limpiar contenedores
+            // Limpiar contenedores de tarjetas
             presencialContainer.innerHTML = '';
             mixtaContainer.innerHTML = '';
             virtualContainer.innerHTML = '';
 
-            // Ocultar mensajes de "no resultados" inicialmente
+            // Ocultar todos los mensajes de "no resultados" y todas las secciones al inicio de cada renderizado
             document.getElementById('noPresencialResults').style.display = 'none';
             document.getElementById('noMixtaResults').style.display = 'none';
             document.getElementById('noVirtualResults').style.display = 'none';
+
+            document.getElementById('presencialSection').style.display = 'none';
+            document.getElementById('mixtaSection').style.display = 'none';
+            document.getElementById('virtualSection').style.display = 'none';
 
             let presencialCount = 0;
             let mixtaCount = 0;
             let virtualCount = 0;
 
+            // Llenar los contenedores con las carreras filtradas y contar por modalidad
             filteredCareers.forEach(career => {
                 const cardHtml = `
                     <div class="course-card bg-white rounded-xl shadow-lg p-6 flex flex-col justify-between card"
@@ -683,8 +230,8 @@
                          data-management-type="${career.managementType}">
                         <div>
                             <h3 class="text-xl font-semibold text-gray-900 mb-2">${career.title}</h3>
-                            <p class="text-indigo-500 font-medium mb-1">${career.institution}</p>
-                            <p class="text-gray-600 text-sm mb-3">Modalidad: <span class="capitalize font-semibold">${career.modality}</span></p>
+                            <p class="text-indigo-600 font-medium mb-1">${career.institution}</p>
+                            <p class="text-gray-600 text-sm mb-3">Modalidad: <span class="capitalize font-semibold text-purple-700">${career.modality}</span></p>
                             <p class="text-gray-700 text-sm mb-4">${career.description}</p>
                         </div>
                         <a href="${career.url}" target="_blank" class="button-primary text-center mt-4">
@@ -704,41 +251,55 @@
                 }
             });
 
-            // Mostrar mensajes de "no resultados" si no hay tarjetas visibles en la categoría
-            if (presencialCount === 0) {
-                document.getElementById('noPresencialResults').style.display = 'block';
-            }
-            if (mixtaCount === 0) {
-                document.getElementById('noMixtaResults').style.display = 'block';
-            }
-            if (virtualCount === 0) {
-                document.getElementById('noVirtualResults').style.display = 'block';
+            console.log('Contador de carreras por modalidad: Presencial:', presencialCount, 'Mixta:', mixtaCount, 'Virtual:', virtualCount);
+
+            const selectedModalityFilter = document.getElementById('modalityFilter').value;
+            console.log('Filtro de Modalidad Seleccionado:', selectedModalityFilter);
+
+            // Lógica para mostrar/ocultar secciones y mensajes de "no resultados"
+            // Las secciones solo se mostrarán si:
+            // 1. El filtro de modalidad es 'all' O coincide con la modalidad de la sección, Y
+            // 2. Hay carreras en esa sección O el filtro de modalidad es específico de esa sección (para mostrar el mensaje de "no resultados")
+
+            // Sección Presencial
+            if (selectedModalityFilter === 'all' || selectedModalityFilter === 'presencial') {
+                document.getElementById('presencialSection').style.display = 'block';
+                if (presencialCount === 0) {
+                    document.getElementById('noPresencialResults').style.display = 'block';
+                }
             }
 
-            // Ocultar/Mostrar secciones completas si no tienen contenido después del filtrado
-            document.getElementById('presencialSection').style.display = (presencialCount === 0 && document.getElementById('modalityFilter').value !== 'all' && document.getElementById('modalityFilter').value !== 'presencial') ? 'none' : 'block';
-            document.getElementById('mixtaSection').style.display = (mixtaCount === 0 && document.getElementById('modalityFilter').value !== 'all' && document.getElementById('modalityFilter').value !== 'mixta') ? 'none' : 'block';
-            document.getElementById('virtualSection').style.display = (virtualCount === 0 && document.getElementById('modalityFilter').value !== 'all' && document.getElementById('modalityFilter').value !== 'virtual') ? 'none' : 'block';
+            // Sección Mixta
+            if (selectedModalityFilter === 'all' || selectedModalityFilter === 'mixta') {
+                document.getElementById('mixtaSection').style.display = 'block';
+                if (mixtaCount === 0) {
+                    document.getElementById('noMixtaResults').style.display = 'block';
+                }
+            }
 
-            // Ajustar visibilidad de las secciones si se filtra por una modalidad específica
-            const selectedModality = document.getElementById('modalityFilter').value;
-            if (selectedModality !== 'all') {
-                document.getElementById('presencialSection').style.display = (selectedModality === 'presencial' || (presencialCount > 0 && selectedModality === 'all')) ? 'block' : 'none';
-                document.getElementById('mixtaSection').style.display = (selectedModality === 'mixta' || (mixtaCount > 0 && selectedModality === 'all')) ? 'block' : 'none';
-                document.getElementById('virtualSection').style.display = (selectedModality === 'virtual' || (virtualCount > 0 && selectedModality === 'all')) ? 'block' : 'none';
-            } else {
-                document.getElementById('presencialSection').style.display = (presencialCount > 0) ? 'block' : 'none';
-                document.getElementById('mixtaSection').style.display = (mixtaCount > 0) ? 'block' : 'none';
-                document.getElementById('virtualSection').style.display = (virtualCount > 0) ? 'block' : 'none';
+            // Sección Virtual
+            if (selectedModalityFilter === 'all' || selectedModalityFilter === 'virtual') {
+                document.getElementById('virtualSection').style.display = 'block';
+                if (virtualCount === 0) {
+                    document.getElementById('noVirtualResults').style.display = 'block';
+                }
             }
         }
 
         // Función para filtrar las carreras
         function filterCourses() {
+            console.log('filterCourses llamada');
             const searchInput = document.getElementById('searchInput').value.toLowerCase();
             const modalityFilter = document.getElementById('modalityFilter').value;
             const institutionTypeFilter = document.getElementById('institutionTypeFilter').value;
             const managementTypeFilter = document.getElementById('managementTypeFilter').value;
+
+            console.log('Valores de los filtros:');
+            console.log('  Búsqueda:', searchInput);
+            console.log('  Modalidad:', modalityFilter);
+            console.log('  Tipo Institución:', institutionTypeFilter);
+            console.log('  Tipo Gestión:', managementTypeFilter);
+
 
             const filteredCareers = careersData.filter(career => {
                 const title = career.title.toLowerCase();
@@ -756,11 +317,15 @@
                 return matchesSearch && matchesModality && matchesInstitutionType && matchesManagementType;
             });
 
+            console.log('Número de carreras filtradas (antes de renderizar):', filteredCareers.length);
+            // console.log('Carreras filtradas (detallado):', filteredCareers); // Descomentar para ver el array completo filtrado
+
             renderCareers(filteredCareers);
         }
 
         // Renderizar todas las carreras al cargar la página inicialmente
         document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM completamente cargado. Renderizando carreras iniciales.');
             renderCareers(careersData);
         });
     </script>
