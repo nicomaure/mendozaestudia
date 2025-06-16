@@ -639,5 +639,98 @@ export const careersData = [
         institutionType: "instituto superior",
         managementType: "pública",
         url: "https://www.ies9029.edu.ar/"
-    }
+    },
+// --- PROFESORADOS ---
+    {
+        title: "Profesorado de Educación Primaria",
+        institution: "Instituto de Educación Superior N° 9-023",
+        description: "Programa de formación docente para el nivel primario. Usualmente de cuatro años de duración.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ies9023-infd.mendoza.edu.ar/sitio/"
+    },
+    {
+        title: "Profesorado para la Educación Secundaria en concurrencia con el título de base",
+        institution: "Instituto de Educación Superior N° 9-023",
+        description: "Diseñado para profesionales con título de base que buscan habilitación pedagógica para la enseñanza secundaria.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ies9023-infd.mendoza.edu.ar/sitio/"
+    },
+    {
+        title: "Profesorado de Educación Secundaria en Matemática",
+        institution: "Instituto de Educación Superior N° 9-023",
+        description: "Formación de docentes especializados en Matemática para el nivel secundario. Duración usual de cuatro años.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ies9023-infd.mendoza.edu.ar/sitio/"
+    },
+    {
+        title: "Profesorado de Educación Secundaria Lengua y Literatura",
+        institution: "Instituto de Educación Superior N° 9-023",
+        description: "Formación docente con currículo exhaustivo en lengua y literatura, incluyendo ESI y tecnologías digitales. Se imparte en turno mañana (8:00 AM a 1:00 PM).",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ies9023-infd.mendoza.edu.ar/sitio/"
+    },
+
+    // --- TECNICATURAS SUPERIORES ---
+    {
+        title: "Tecnicatura Superior en Administración Pública",
+        institution: "Instituto de Educación Superior N° 9-023",
+        description: "Formación técnica para el sector público, incluyendo gestión de políticas, contabilidad pública y procedimientos de contratación. Se imparte en turno noche (7:00 PM a 11:00 PM). Requiere exámenes de ingreso en Matemática, Estado y Sociedad, y Administración General.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ies9023-infd.mendoza.edu.ar/sitio/"
+    },
+    {
+        title: "Tecnicatura Superior en Desarrollo de Software",
+        institution: "Instituto de Educación Superior N° 9-023",
+        description: "Programa de tres años que abarca desde la programación fundamental hasta temas avanzados como ciberseguridad y gestión de proyectos. Se imparte en turno intermedio (2:30 PM a 6:30 PM). Requiere exámenes de ingreso en Matemática y Lógica.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ies9023-infd.mendoza.edu.ar/sitio/"
+    },
+    {
+        title: "Tecnicatura Superior en Enfermería",
+        institution: "Instituto de Educación Superior N° 9-023",
+        description: "Contribuye a la salud pública formando profesionales de enfermería calificados. Usualmente presencial con una duración de tres años.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ies9023-infd.mendoza.edu.ar/sitio/"
+    },
+    {
+        title: "Tecnicatura Superior en Enología e Industrias de los Alimentos",
+        institution: "Instituto de Educación Superior N° 9-023",
+        description: "Programa relevante para la industria vitivinícola de Mendoza, ubicado en las antiguas instalaciones de la bodega Giol.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ies9023-infd.mendoza.edu.ar/sitio/"
+    },
+    {
+        title: "Tecnicatura Superior en Mecatrónica",
+        institution: "Instituto de Educación Superior N° 9-023",
+        description: "Formación multidisciplinaria que integra mecánica, electrónica e informática, preparando para fabricación avanzada y automatización industrial.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ies9023-infd.mendoza.edu.ar/sitio/"
+    },
+    {
+        title: "Tecnicatura Superior en Servicios Básicos y Construcciones Livianas Industrializadas",
+        institution: "Instituto de Educación Superior N° 9-023",
+        description: "Enfocada en construcciones modernas, eficiencia energética y domótica. Se imparte en turno noche (7:00 PM a 11:00 PM). Requiere exámenes de ingreso en Matemática y Física.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ies9023-infd.mendoza.edu.ar/sitio/"
+    },    
 ];
