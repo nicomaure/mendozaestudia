@@ -16,539 +16,628 @@ export const careersData = [
         title: "Carreras de Grado (varias facultades)",
         institution: "Universidad Nacional de Cuyo (UNCuyo)",
         description: "Amplia gama de programas de grado y posgrado en diversas áreas del conocimiento. Predominantemente presenciales con posibilidad de componentes virtuales.",
-        modality: "presencial", // Predominantemente presencial
+        modality: "presencial",
         institutionType: "universidad",
         managementType: "pública",
         url: "https://www.uncuyo.edu.ar/"
     },
-{
-    title: "Licenciatura en Logística",
-    institution: "UNCuyo (Facultad de Ciencias Económicas)",
-    description: "Gestión de la cadena de suministros con modalidad 100% a distancia.",
-    modality: "virtual",
-    institutionType: "universidad",
-    managementType: "pública",
-    url: "https://www.uncuyo.edu.ar/extension/oferta-academica/licenciatura-en-logistica-a-distancia"
-},
-{
-    title: "Cursos y Postgrados con componentes virtuales",
-    institution: "UNCuyo (varias facultades)",
-    description: "Diversos programas que incorporan hasta un 50% de carga horaria virtual como parte de su plan de virtualización.",
-    modality: "mixta",
-    institutionType: "universidad",
-    managementType: "pública",
-    url: "https://www.uncuyo.edu.ar/"
-},
-// UTN - Facultad Regional Mendoza
-{
-    title: "Ingeniería Civil, Electromecánica, Electrónica, Química, Sistemas de Información, Telecomunicaciones",
-    institution: "UTN – Facultad Regional Mendoza",
-    description: "Ingenierías técnicas oficiales con fuerte enfoque práctico.",
-    modality: "presencial",
-    institutionType: "universidad",
-    managementType: "pública",
-    url: "https://www4.frm.utn.edu.ar/ingenierias/"
-},
-{
-    title: "Licenciatura en Administración de Empresas, Gestión de Empresas Turísticas y Hoteleras, Enseñanza de la Matemática, Higiene y Seguridad en el Trabajo, Enología",
-    institution: "UTN FRM",
-    description: "Licenciaturas en gestión, educación y salud laboral.",
-    modality: "presencial",
-    institutionType: "universidad",
-    managementType: "pública",
-    url: "https://www4.frm.utn.edu.ar/licenciaturas/"
-},
-{
-    title: "Tecnicatura Universitaria en Enología, Gestión de Empresas Hoteleras, Gestión de Empresas Turísticas, Higiene y Seguridad, Programación, Producción de Videojuegos",
-    institution: "UTN FRM",
-    description: "Carreras técnicas especializadas para diversas industrias.",
-    modality: "presencial", // Aunque algunas pueden tener componentes virtuales, se listan como presencial implícito
-    institutionType: "universidad",
-    managementType: "pública",
-    url: "https://www4.frm.utn.edu.ar/tecnicaturas-superiores/"
-},
-{
-    title: "Especialización en Redes de Datos",
-    institution: "UTN FRM",
-    description: "Posgrado con modalidad a distancia para profesionales.",
-    modality: "virtual",
-    institutionType: "universidad",
-    managementType: "pública",
-    url: "https://www4.frm.utn.edu.ar/category/posgrados/especializaciones/"
-},
-{
-    title: "Cursos de Capacitación (Virtuales)",
-    institution: "UTN FRM",
-    description: "Cursos de extensión universitaria y a distancia, como Renovación Credencial Manejo de Autoelevadores y Gestión de Costos Logísticos.",
-    modality: "virtual",
-    institutionType: "universidad",
-    managementType: "pública",
-    url: "https://www4.frm.utn.edu.ar/cursos-a-distancia-y-cursos-de-extension-universitaria/"
-},
-{
-    title: "Maestrías y Doctorados",
-    institution: "UTN FRM",
-    description: "Programas avanzados de posgrado.",
-    modality: "presencial", // Implícito, verificar en cada posgrado.
-    institutionType: "universidad",
-    managementType: "pública",
-    url: "https://www4.frm.utn.edu.ar/category/posgrados/"
-},
-// UTN - Facultad Regional San Rafael
-{
-    title: "Ingeniería Civil, Ingeniería Electromecánica",
-    institution: "UTN – Facultad Regional San Rafael",
-    description: "Carreras de ingeniería con enfoque en infraestructura y energía.",
-    modality: "presencial",
-    institutionType: "universidad",
-    managementType: "pública",
-    url: "http://www.ofertaeducativasr.com.ar/universidad-tecnologica-nacional/"
-},
-{
-    title: "Ingeniería Industrial",
-    institution: "UTN – Facultad Regional San Rafael",
-    description: "Formación en optimización de procesos industriales con modalidad a distancia.",
-    modality: "virtual",
-    institutionType: "universidad",
-    managementType: "pública",
-    url: "http://www.ofertaeducativasr.com.ar/universidad-tecnologica-nacional/"
-},
+    {
+        title: "Licenciatura en Logística",
+        institution: "UNCuyo (Facultad de Ciencias Económicas)",
+        description: "Gestión de la cadena de suministros con modalidad 100% a distancia.",
+        modality: "virtual",
+        institutionType: "universidad",
+        managementType: "pública",
+        url: "https://www.uncuyo.edu.ar/extension/oferta-academica/licenciatura-en-logistica-a-distancia"
+    },
+    {
+        title: "Cursos y Postgrados con componentes virtuales",
+        institution: "UNCuyo (varias facultades)",
+        description: "Diversos programas que incorporan hasta un 50% de carga horaria virtual como parte de su plan de virtualización.",
+        modality: "mixta",
+        institutionType: "universidad",
+        managementType: "pública",
+        url: "https://www.uncuyo.edu.ar/"
+    },
+    // UTN - Facultad Regional Mendoza
+    {
+        title: "Ingeniería Civil, Electromecánica, Electrónica, Química, Sistemas de Información, Telecomunicaciones",
+        institution: "UTN – Facultad Regional Mendoza",
+        description: "Ingenierías técnicas oficiales con fuerte enfoque práctico.",
+        modality: "presencial",
+        institutionType: "universidad",
+        managementType: "pública",
+        url: "https://www4.frm.utn.edu.ar/ingenierias/"
+    },
+    {
+        title: "Licenciatura en Administración de Empresas, Gestión de Empresas Turísticas y Hoteleras, Enseñanza de la Matemática, Higiene y Seguridad en el Trabajo, Enología",
+        institution: "UTN FRM",
+        description: "Licenciaturas en gestión, educación y salud laboral.",
+        modality: "presencial",
+        institutionType: "universidad",
+        managementType: "pública",
+        url: "https://www4.frm.utn.edu.ar/licenciaturas/"
+    },
+    {
+        title: "Tecnicatura Universitaria en Enología, Gestión de Empresas Hoteleras, Gestión de Empresas Turísticas, Higiene y Seguridad, Programación, Producción de Videojuegos",
+        institution: "UTN FRM",
+        description: "Carreras técnicas especializadas para diversas industrias.",
+        modality: "presencial",
+        institutionType: "universidad",
+        managementType: "pública",
+        url: "https://www4.frm.utn.edu.ar/tecnicaturas-superiores/"
+    },
+    {
+        title: "Especialización en Redes de Datos",
+        institution: "UTN FRM",
+        description: "Posgrado con modalidad a distancia para profesionales.",
+        modality: "virtual",
+        institutionType: "universidad",
+        managementType: "pública",
+        url: "https://www4.frm.utn.edu.ar/category/posgrados/especializaciones/"
+    },
+    {
+        title: "Cursos de Capacitación (Virtuales)",
+        institution: "UTN FRM",
+        description: "Cursos de extensión universitaria y a distancia, como Renovación Credencial Manejo de Autoelevadores y Gestión de Costos Logísticos.",
+        modality: "virtual",
+        institutionType: "universidad",
+        managementType: "pública",
+        url: "https://www4.frm.utn.edu.ar/cursos-a-distancia-y-cursos-de-extension-universitaria/"
+    },
+    {
+        title: "Maestrías y Doctorados",
+        institution: "UTN FRM",
+        description: "Programas avanzados de posgrado.",
+        modality: "presencial",
+        institutionType: "universidad",
+        managementType: "pública",
+        url: "https://www4.frm.utn.edu.ar/category/posgrados/"
+    },
+    // UTN - Facultad Regional San Rafael
+    {
+        title: "Ingeniería Civil, Ingeniería Electromecánica",
+        institution: "UTN – Facultad Regional San Rafael",
+        description: "Carreras de ingeniería con enfoque en infraestructura y energía.",
+        modality: "presencial",
+        institutionType: "universidad",
+        managementType: "pública",
+        url: "http://www.ofertaeducativasr.com.ar/universidad-tecnologica-nacional/"
+    },
+    {
+        title: "Ingeniería Industrial",
+        institution: "UTN – Facultad Regional San Rafael",
+        description: "Formación en optimización de procesos industriales con modalidad a distancia.",
+        modality: "virtual",
+        institutionType: "universidad",
+        managementType: "pública",
+        url: "http://www.ofertaeducativasr.com.ar/universidad-tecnologica-nacional/"
+    },
 
-// --- UNIVERSIDADES PRIVADAS ---
-// Universidad de Mendoza (UM)
-{
-    title: "Abogacía, Corredor Inmobiliario, Escribanía, Procuración, Lic. en Emprendimientos Inmobiliarios",
-    institution: "Universidad de Mendoza",
-    description: "Oferta en Ciencias Jurídicas y Sociales, predominantemente presencial.",
-    modality: "presencial",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://um.edu.ar/ciencias-juridicas-y-sociales/"
-},
-{
-    title: "Arquitectura, Diseño Gráfico, Diseño de Interiores, Diseño de Indumentaria y Textil, Lic. en Diseño",
-    institution: "Universidad de Mendoza",
-    description: "Carreras en Arquitectura, Urbanismo y Diseño, predominantemente presenciales.",
-    modality: "presencial",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://um.edu.ar/arquitectura-urbanismo-y-diseno/"
-},
-{
-    title: "Kinesiología, Psicología, Nutrición, Odontología, Medicina",
-    institution: "Universidad de Mendoza",
-    description: "Carreras en Ciencias de la Salud y Medicina, predominantemente presenciales.",
-    modality: "presencial",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://um.edu.ar/ciencias-de-la-salud/"
-},
-{
-    title: "Ingeniería en Informática, Electrónica, Industrial",
-    institution: "Universidad de Mendoza",
-    description: "Ingenierías, predominantemente presenciales.",
-    modality: "presencial",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://um.edu.ar/ingenieria/"
-},
-{
-    title: "Contador Público, Lic. en Administración de Negocios",
-    institution: "Universidad de Mendoza",
-    description: "Carreras en Ciencias Económicas, predominantemente presenciales.",
-    modality: "presencial",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://um.edu.ar/ciencias-economicas/"
-},
-{
-    title: "Cursos de Idiomas (Inglés A1, A2, B1, B2, C1+)",
-    institution: "Universidad de Mendoza (Advanced English Mendoza)",
-    description: "Cursos de inglés completamente en línea, en distintos niveles y duraciones.",
-    modality: "virtual",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://um.edu.ar/en/cursos-idioma/curso-de-ingles-regular/"
-},
-// Universidad del Aconcagua (UDA)
-{
-    title: "Licenciatura en Niñez, Adolescencia y Familia",
-    institution: "Universidad del Aconcagua",
-    description: "Programa de grado en el área social, con modalidad a distancia.",
-    modality: "virtual",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://www.uda.edu.ar/index.php/licenciatura-en-ninez-adolecencia-y-familia-2-md"
-},
-{
-    title: "Traductor Público de Inglés, Italiano, Portugués",
-    institution: "Universidad del Aconcagua",
-    description: "Traductorados públicos ofrecidos en modalidad a distancia.",
-    modality: "virtual",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://www.uda.edu.ar/index.php/oferta-educativa/modalidad-distancia-menu"
-},
-{
-    title: "Tecnicatura Universitaria en Niñez, Adolescencia y Familia, Seguridad Ciudadana",
-    institution: "Universidad del Aconcagua",
-    description: "Carreras de pregrado a distancia en áreas sociales y de seguridad.",
-    modality: "virtual",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://www.uda.edu.ar/index.php/oferta-educativa/modalidad-distancia-menu"
-},
-{
-    title: "Ciclos de Complementación Curricular (Licenciatura en Administración de Salud, Inglés, Niñez, Adolescencia y Familia, Seguridad Ciudadana Integral)",
-    institution: "Universidad del Aconcagua",
-    description: "Programas para complementar estudios previos, todos a distancia.",
-    modality: "virtual",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://www.uda.edu.ar/index.php/oferta-educativa/modalidad-distancia-menu"
-},
-{
-    title: "Licenciatura en Dirección Creativa de Diseño y Publicidad (C.C.C.)",
-    institution: "Universidad del Aconcagua",
-    description: "Ciclo de Complementación Curricular con opción mixta, principalmente a distancia.",
-    modality: "mixta",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://www.uda.edu.ar/index.php/licenciatura-direcc-creat-diseno-public"
-},
-{
-    title: "Diplomaturas y Cursos",
-    institution: "Universidad del Aconcagua",
-    description: "Oferta variada de formación continua a distancia.",
-    modality: "virtual",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://www.uda.edu.ar/index.php/oferta-educativa/modalidad-distancia-menu"
-},
-{
-    title: "Licenciatura en Comercio Internacional, Marketing, Turismo (y otras)",
-    institution: "Universidad del Aconcagua",
-    description: "Carreras de grado ofrecidas en modalidad presencial.",
-    modality: "presencial",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://www.uda.edu.ar/index.php/oferta-educativa-fcsa"
-},
-// Universidad Juan Agustín Maza (UMAZA)
-{
-    title: "Abogacía, Agrimensura, Bioquímica, Comunicación Social, Contador Público, Farmacia, Dirección de Empresas, Enología, Locución, Kinesiología y Fisioterapia, Nutrición, Periodismo, Musicoterapia, Publicidad, Realización Audiovisual, Terapia Ocupacional, Veterinaria, Licenciatura en Matemáticas",
-    institution: "Universidad Juan Agustín Maza",
-    description: "Amplia oferta de carreras de grado presenciales en diversas áreas.",
-    modality: "presencial",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://www.umaza.edu.ar/"
-},
-{
-    title: "Licenciatura en Educación Física, Recursos Humanos, Instrumentación Quirúrgica, Anatomía Patológica, Anestesiología, Producción de Bioimágenes, Hemoterapia, Gastronomía",
-    institution: "Universidad Juan Agustín Maza",
-    description: "Licenciaturas con cursado a través del Campus Virtual.",
-    modality: "virtual",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://www.umaza.edu.ar/campus-virtual/"
-},
-{
-    title: "Profesorado para Profesionales, Ciclo de Complementación de Podología Universitaria",
-    institution: "Universidad Juan Agustín Maza",
-    description: "Programas ofrecidos en modalidad a distancia a través del Campus Virtual.",
-    modality: "virtual",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://www.umaza.edu.ar/campus-virtual/"
-},
-{
-    title: "Recursos Humanos (Ciclo de Complementación a distancia)",
-    institution: "Universidad Juan Agustín Maza",
-    description: "Ciclo de Complementación Curricular de Recursos Humanos, con opción a distancia.",
-    modality: "virtual",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://www.umaza.edu.ar/landings/recursoshumanos/inicio"
-},
-// Universidad de Congreso (UC)
-{
-    title: "Abogacía, Administración, Comercialización, Contador, Economía, Hotelería, Recursos Humanos, Turismo, Comunicación, Periodismo, Arquitectura, Psicología, Kinesiología, Tecnicaturas en Dirección y Producción Audiovisual (y otras)",
-    institution: "Universidad de Congreso",
-    description: "Amplia oferta de carreras presenciales en distintas sedes.",
-    modality: "presencial",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://www.ucongreso.edu.ar/carreras-presenciales/"
-},
-{
-    title: "Administración, Comercialización, Economía, Recursos Humanos, Comunicación, Comercio Exterior, Marketing Internacional, Relaciones Económicas Internacionales, Relaciones Internacionales y Gobernanza Global",
-    institution: "Universidad de Congreso",
-    description: "Carreras de grado ofrecidas completamente a distancia desde el primer año.",
-    modality: "virtual",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://www.ucongreso.edu.ar/carreras-a-distancia/"
-},
-{
-    title: "Ciclos de Complementación Curricular a distancia (Administración, Comercialización, Recursos Humanos)",
-    institution: "Universidad de Congreso",
-    description: "Programas para complementar estudios previos, en modalidad a distancia.",
-    modality: "virtual",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://www.ucongreso.edu.ar/carreras-a-distancia/"
-},
-// Universidad Champagnat (UCH)
-{
-    title: "Licenciatura en Administración de Empresas, Comercio Internacional, Abogacía y Procuración, Diseño Gráfico y Digital, Sistemas de Información",
-    institution: "Universidad Champagnat",
-    description: "Carreras de grado con modalidad presencial.",
-    modality: "presencial",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://www.uch.edu.ar/"
-},
-{
-    title: "Especialización en Docencia en Entornos Digitales (Posgrado), Diplomatura en Entornos Virtuales de Aprendizaje para Educación (Posgrado)",
-    institution: "Universidad Champagnat",
-    description: "Programas de posgrado con enfoque en educación digital y entornos virtuales.",
-    modality: "virtual",
-    institutionType: "universidad",
-    managementType: "privada",
-    url: "https://www.uch.edu.ar/" // Enlace general, ya que no se especifica un URL para los posgrados.
-},
+    // --- UNIVERSIDADES PRIVADAS ---
+    // Universidad de Mendoza (UM)
+    {
+        title: "Abogacía, Corredor Inmobiliario, Escribanía, Procuración, Lic. en Emprendimientos Inmobiliarios",
+        institution: "Universidad de Mendoza",
+        description: "Oferta en Ciencias Jurídicas y Sociales, predominantemente presencial.",
+        modality: "presencial",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://um.edu.ar/ciencias-juridicas-y-sociales/"
+    },
+    {
+        title: "Arquitectura, Diseño Gráfico, Diseño de Interiores, Diseño de Indumentaria y Textil, Lic. en Diseño",
+        institution: "Universidad de Mendoza",
+        description: "Carreras en Arquitectura, Urbanismo y Diseño, predominantemente presenciales.",
+        modality: "presencial",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://um.edu.ar/arquitectura-urbanismo-y-diseno/"
+    },
+    {
+        title: "Kinesiología, Psicología, Nutrición, Odontología, Medicina",
+        institution: "Universidad de Mendoza",
+        description: "Carreras en Ciencias de la Salud y Medicina, predominantemente presenciales.",
+        modality: "presencial",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://um.edu.ar/ciencias-de-la-salud/"
+    },
+    {
+        title: "Ingeniería en Informática, Electrónica, Industrial",
+        institution: "Universidad de Mendoza",
+        description: "Ingenierías, predominantemente presenciales.",
+        modality: "presencial",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://um.edu.ar/ingenieria/"
+    },
+    {
+        title: "Contador Público, Lic. en Administración de Negocios",
+        institution: "Universidad de Mendoza",
+        description: "Carreras en Ciencias Económicas, predominantemente presenciales.",
+        modality: "presencial",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://um.edu.ar/ciencias-economicas/"
+    },
+    {
+        title: "Cursos de Idiomas (Inglés A1, A2, B1, B2, C1+)",
+        institution: "Universidad de Mendoza (Advanced English Mendoza)",
+        description: "Cursos de inglés completamente en línea, en distintos niveles y duraciones.",
+        modality: "virtual",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://um.edu.ar/en/cursos-idioma/curso-de-ingles-regular/"
+    },
+    // Universidad del Aconcagua (UDA)
+    {
+        title: "Licenciatura en Niñez, Adolescencia y Familia",
+        institution: "Universidad del Aconcagua",
+        description: "Programa de grado en el área social, con modalidad a distancia.",
+        modality: "virtual",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://www.uda.edu.ar/index.php/licenciatura-en-ninez-adolecencia-y-familia-2-md"
+    },
+    {
+        title: "Traductor Público de Inglés, Italiano, Portugués",
+        institution: "Universidad del Aconcagua",
+        description: "Traductorados públicos ofrecidos en modalidad a distancia.",
+        modality: "virtual",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://www.uda.edu.ar/index.php/oferta-educativa/modalidad-distancia-menu"
+    },
+    {
+        title: "Tecnicatura Universitaria en Niñez, Adolescencia y Familia, Seguridad Ciudadana",
+        institution: "Universidad del Aconcagua",
+        description: "Carreras de pregrado a distancia en áreas sociales y de seguridad.",
+        modality: "virtual",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://www.uda.edu.ar/index.php/oferta-educativa/modalidad-distancia-menu"
+    },
+    {
+        title: "Ciclos de Complementación Curricular (Licenciatura en Administración de Salud, Inglés, Niñez, Adolescencia y Familia, Seguridad Ciudadana Integral)",
+        institution: "Universidad del Aconcagua",
+        description: "Programas para complementar estudios previos, todos a distancia.",
+        modality: "virtual",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://www.uda.edu.ar/index.php/oferta-educativa/modalidad-distancia-menu"
+    },
+    {
+        title: "Licenciatura en Dirección Creativa de Diseño y Publicidad (C.C.C.)",
+        institution: "Universidad del Aconcagua",
+        description: "Ciclo de Complementación Curricular con opción mixta, principalmente a distancia.",
+        modality: "mixta",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://www.uda.edu.ar/index.php/licenciatura-direcc-creat-diseno-public"
+    },
+    {
+        title: "Diplomaturas y Cursos",
+        institution: "Universidad del Aconcagua",
+        description: "Oferta variada de formación continua a distancia.",
+        modality: "virtual",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://www.uda.edu.ar/index.php/oferta-educativa/modalidad-distancia-menu"
+    },
+    {
+        title: "Licenciatura en Comercio Internacional, Marketing, Turismo (y otras)",
+        institution: "Universidad del Aconcagua",
+        description: "Carreras de grado ofrecidas en modalidad presencial.",
+        modality: "presencial",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://www.uda.edu.ar/index.php/oferta-educativa-fcsa"
+    },
+    // Universidad Juan Agustín Maza (UMAZA)
+    {
+        title: "Abogacía, Agrimensura, Bioquímica, Comunicación Social, Contador Público, Farmacia, Dirección de Empresas, Enología, Locución, Kinesiología y Fisioterapia, Nutrición, Periodismo, Musicoterapia, Publicidad, Realización Audiovisual, Terapia Ocupacional, Veterinaria, Licenciatura en Matemáticas",
+        institution: "Universidad Juan Agustín Maza",
+        description: "Amplia oferta de carreras de grado presenciales en diversas áreas.",
+        modality: "presencial",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://www.umaza.edu.ar/"
+    },
+    {
+        title: "Licenciatura en Educación Física, Recursos Humanos, Instrumentación Quirúrgica, Anatomía Patológica, Anestesiología, Producción de Bioimágenes, Hemoterapia, Gastronomía",
+        institution: "Universidad Juan Agustín Maza",
+        description: "Licenciaturas con cursado a través del Campus Virtual.",
+        modality: "virtual",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://www.umaza.edu.ar/campus-virtual/"
+    },
+    {
+        title: "Profesorado para Profesionales, Ciclo de Complementación de Podología Universitaria",
+        institution: "Universidad Juan Agustín Maza",
+        description: "Programas ofrecidos en modalidad a distancia a través del Campus Virtual.",
+        modality: "virtual",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://www.umaza.edu.ar/campus-virtual/"
+    },
+    {
+        title: "Recursos Humanos (Ciclo de Complementación a distancia)",
+        institution: "Universidad Juan Agustín Maza",
+        description: "Ciclo de Complementación Curricular de Recursos Humanos, con opción a distancia.",
+        modality: "virtual",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://www.umaza.edu.ar/landings/recursoshumanos/inicio"
+    },
+    // Universidad de Congreso (UC)
+    {
+        title: "Abogacía, Administración, Comercialización, Contador, Economía, Hotelería, Recursos Humanos, Turismo, Comunicación, Periodismo, Arquitectura, Psicología, Kinesiología, Tecnicaturas en Dirección y Producción Audiovisual (y otras)",
+        institution: "Universidad de Congreso",
+        description: "Amplia oferta de carreras presenciales en distintas sedes.",
+        modality: "presencial",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://www.ucongreso.edu.ar/carreras-presenciales/"
+    },
+    {
+        title: "Administración, Comercialización, Economía, Recursos Humanos, Comunicación, Comercio Exterior, Marketing Internacional, Relaciones Económicas Internacionales, Relaciones Internacionales y Gobernanza Global",
+        institution: "Universidad de Congreso",
+        description: "Carreras de grado ofrecidas completamente a distancia desde el primer año.",
+        modality: "virtual",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://www.ucongreso.edu.ar/carreras-a-distancia/"
+    },
+    {
+        title: "Ciclos de Complementación Curricular a distancia (Administración, Comercialización, Recursos Humanos)",
+        institution: "Universidad de Congreso",
+        description: "Programas para complementar estudios previos, en modalidad a distancia.",
+        modality: "virtual",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://www.ucongreso.edu.ar/carreras-a-distancia/"
+    },
+    // Universidad Champagnat (UCH)
+    {
+        title: "Licenciatura en Administración de Empresas, Comercio Internacional, Abogacía y Procuración, Diseño Gráfico y Digital, Sistemas de Información",
+        institution: "Universidad Champagnat",
+        description: "Carreras de grado con modalidad presencial.",
+        modality: "presencial",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://www.uch.edu.ar/"
+    },
+    {
+        title: "Especialización en Docencia en Entornos Digitales (Posgrado), Diplomatura en Entornos Virtuales de Aprendizaje para Educación (Posgrado)",
+        institution: "Universidad Champagnat",
+        description: "Programas de posgrado con enfoque en educación digital y entornos virtuales.",
+        modality: "virtual",
+        institutionType: "universidad",
+        managementType: "privada",
+        url: "https://www.uch.edu.ar/"
+    },
 
-// --- INSTITUTOS SUPERIORES PÚBLICOS ---
-// Instituto Superior de Educación Mendoza (ISEM) - NOTA: El informe lo clasifica como privado, pero en otras fuentes aparece como público. Me baso en el documento provisto.
-{
-    title: "Profesorado de Educación Inicial, Secundaria en Historia, Secundaria en Geografía",
-    institution: "Instituto Superior de Educación Mendoza (ISEM)",
-    description: "Carreras docentes con validez oficial, predominantemente presenciales. Cuentan con campus virtual de apoyo.",
-    modality: "presencial",
-    institutionType: "instituto superior",
-    managementType: "privada", // Según el informe adjunto
-    url: "https://isem-infd.mendoza.edu.ar/sitio/"
-},
-{
-    title: "Tecnicatura Superior en Preceptoría Escolar",
-    institution: "Instituto Superior de Educación Mendoza (ISEM)",
-    description: "Formación técnica para el ámbito escolar, predominantemente presencial. Cuentan con campus virtual de apoyo.",
-    modality: "presencial",
-    institutionType: "instituto superior",
-    managementType: "privada", // Según el informe adjunto
-    url: "https://isem-infd.mendoza.edu.ar/sitio/"
-},
-{
-    title: "Cursos de Capacitación (Preceptor Escolar, Secretario Escolar)",
-    institution: "Instituto Superior de Educación Mendoza (ISEM)",
-    description: "Cursos de actualización docente con puntaje y resolución de la DGE.",
-    modality: "presencial", // Implícito, pueden tener apoyo virtual
-    institutionType: "instituto superior",
-    managementType: "privada", // Según el informe adjunto
-    url: "https://isem-infd.mendoza.edu.ar/sitio/capacitacion/"
-},
-// Instituto de Educación Física 9-016 Dr. Jorge E. Coll (IEF 9-016)
-{
-    title: "Profesorado de Educación Física",
-    institution: "IEF 9-016 Dr. Jorge E. Coll",
-    description: "Formación para profesores de educación física en diversas sedes.",
-    modality: "presencial",
-    institutionType: "instituto superior",
-    managementType: "pública",
-    url: "https://ief9-016.edu.ar/profesorado-de-educacion-fisica/"
-},
-{
-    title: "Tecnicatura Superior en Actividades de Montaña, Conservación de la Naturaleza, Preparación Física",
-    institution: "IEF 9-016 Dr. Jorge E. Coll",
-    description: "Tecnicaturas con enfoque en actividad física y medio ambiente.",
-    modality: "presencial",
-    institutionType: "instituto superior",
-    managementType: "pública",
-    url: "https://ief9-016.edu.ar/"
-},
-{
-    title: "Formación Profesional Guardavidas y Náuticos Andinos",
-    institution: "IEF 9-016 Dr. Jorge E. Coll",
-    description: "Capacitaciones profesionales para actividades acuáticas y de montaña.",
-    modality: "presencial",
-    institutionType: "instituto superior",
-    managementType: "pública",
-    url: "https://ief9-016.edu.ar/"
-},
-// I.E.S. Nº 9-011 - Del Atuel
-{
-    title: "Profesorado de Educación Secundaria en Biología, Geografía, Historia, Informática, Inglés, Lengua y Literatura, Matemática",
-    institution: "I.E.S. Nº 9-011 - Del Atuel",
-    description: "Formación docente en diversas disciplinas, predominantemente presencial.",
-    modality: "presencial",
-    institutionType: "instituto superior",
-    managementType: "pública",
-    url: "https://ies9011-infd.mendoza.edu.ar/sitio/oferta-educativa/"
-},
-{
-    title: "Tecnicatura Superior en Turismo & Hotelería, Gastronomía",
-    institution: "I.E.S. Nº 9-011 - Del Atuel",
-    description: "Tecnicaturas en el sector turístico y gastronómico.",
-    modality: "presencial",
-    institutionType: "instituto superior",
-    managementType: "pública",
-    url: "https://ies9011-infd.mendoza.edu.ar/sitio/oferta-educativa/"
-},
-// Instituto Tecnológico Universitario (ITU) Mendoza
-{
-    title: "Tecnicatura Universitaria en Desarrollo de Software, Electricidad y Sistemas de Control Industriales, Gestión de Empresas, Higiene y Seguridad en el Trabajo, Logística y Transporte, Mantenimiento e Instalaciones Industriales, Marketing, Producción Industrial y Automatización, Redes de Datos y Telecomunicaciones",
-    institution: "Instituto Tecnológico Universitario (ITU) Mendoza",
-    description: "Tecnicaturas universitarias que responden a las demandas productivas, con cursado regular y vespertino.",
-    modality: "presencial",
-    institutionType: "instituto superior",
-    managementType: "pública",
-    url: "https://itu.uncuyo.edu.ar/estudios/"
-},
-{
-    title: "Cursos y Talleres (ej. Manejo de Autoelevadores, Gestión de Costos Logísticos)",
-    institution: "Instituto Tecnológico Universitario (ITU) Mendoza",
-    description: "Cursos de capacitación, algunos ofrecidos en modalidad virtual.",
-    modality: "mixta", // Algunos cursos virtuales, otros presenciales.
-    institutionType: "instituto superior",
-    managementType: "pública",
-    url: "https://itu.uncuyo.edu.ar/cursos/"
-},
-// IES N° 9-001 Gral. José de San Martín
-{
-    title: "Profesorado de Biología, Educación Especial, Educación Inicial, Educación Primaria, Geografía, Historia, Inglés, Lengua y Literatura, para Técnicos",
-    institution: "IES N° 9-001 Gral. José de San Martín",
-    description: "Variedad de profesorados con apoyo de campus virtual.",
-    modality: "presencial",
-    institutionType: "instituto superior",
-    managementType: "pública",
-    url: "https://ens9001-infd.mendoza.edu.ar/sitio/"
-},
-{
-    title: "Tecnicatura en Administración Pública, Comunicación Social, Diseño de Indumentaria, Textil y Accesorios, Higiene y Seguridad Laboral",
-    institution: "IES N° 9-001 Gral. José de San Martín",
-    description: "Tecnicaturas con apoyo de campus virtual.",
-    modality: "presencial",
-    institutionType: "instituto superior",
-    managementType: "pública",
-    url: "https://ens9001-infd.mendoza.edu.ar/sitio/"
-},
-// IES 9-002 Tomás Godoy Cruz
-{
-    title: "Profesorado de Inglés, Artes Visuales, Educación Secundaria en Biología, Educación Especial, Educación Inicial, Educación Primaria, Educación Secundaria en Física, Educación Secundaria en Lengua y Literatura, Educación Secundaria en Matemática, Educación Secundaria en Química",
-    institution: "IES 9-002 Tomás Godoy Cruz",
-    description: "Amplia oferta de profesorados en diversas especialidades.",
-    modality: "presencial",
-    institutionType: "instituto superior",
-    managementType: "pública",
-    url: "https://ens9002-infd.mendoza.edu.ar/sitio/carreras/"
-},
-{
-    title: "Tecnicatura en Producción Artística y Artesanal",
-    institution: "IES 9-002 Tomás Godoy Cruz",
-    description: "Formación técnica en el ámbito artístico.",
-    modality: "presencial",
-    institutionType: "instituto superior",
-    managementType: "pública",
-    url: "https://ens9002-infd.mendoza.edu.ar/sitio/carreras/"
-},
-// Instituto Superior de Formación Docente y Técnica N° 9-003 Mercedes Tomasa de San Martín de Balcarce
-{
-    title: "Profesorado de Educación Primaria, Educación Inicial, Educación Especial, para Técnicos (PROTEC)",
-    institution: "IES 9-003 Mercedes Tomasa de San Martín de Balcarce",
-    description: "Programas de formación docente.",
-    modality: "presencial",
-    institutionType: "instituto superior",
-    managementType: "pública",
-    url: "https://ens9003-infd.mendoza.edu.ar/sitio/carreras/"
-},
-{
-    title: "Tecnicatura Superior en Locución de Radio y Televisión, Acompañamiento Terapéutico",
-    institution: "IES 9-003 Mercedes Tomasa de San Martín de Balcarce",
-    description: "Tecnicaturas en comunicación y salud.",
-    modality: "presencial",
-    institutionType: "instituto superior",
-    managementType: "pública",
-    url: "https://ens9003-infd.mendoza.edu.ar/sitio/carreras/"
-},
-// ISTEEC Mendoza
-{
-    title: "Administración de Empresas, Administración Pública, Comercio Internacional y Aduana, Contabilidad, Enología e Industria de los Alimentos, Logística, Marketing, Turismo y Hotelería, Recursos Humanos, FP3 Logística Minera",
-    institution: "ISTEEC Mendoza",
-    description: "Carreras técnicas presenciales con enfoque en estudios económicos y técnicos. Cuentan con Campus Virtual.",
-    modality: "presencial",
-    institutionType: "instituto superior",
-    managementType: "pública", // Clasificado como público por algunas fuentes
-    url: "https://isteec.edu.ar/"
-},
+    // --- INSTITUTOS SUPERIORES PÚBLICOS ---
+    // Instituto Superior de Educación Mendoza (ISEM)
+    {
+        title: "Profesorado de Educación Inicial, Secundaria en Historia, Secundaria en Geografía",
+        institution: "Instituto Superior de Educación Mendoza (ISEM)",
+        description: "Carreras docentes con validez oficial, predominantemente presenciales. Cuentan con campus virtual de apoyo.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "privada",
+        url: "https://isem-infd.mendoza.edu.ar/sitio/"
+    },
+    {
+        title: "Tecnicatura Superior en Preceptoría Escolar",
+        institution: "Instituto Superior de Educación Mendoza (ISEM)",
+        description: "Formación técnica para el ámbito escolar, predominantemente presencial. Cuentan con campus virtual de apoyo.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "privada",
+        url: "https://isem-infd.mendoza.edu.ar/sitio/"
+    },
+    {
+        title: "Cursos de Capacitación (Preceptor Escolar, Secretario Escolar)",
+        institution: "Instituto Superior de Educación Mendoza (ISEM)",
+        description: "Cursos de actualización docente con puntaje y resolución de la DGE.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "privada",
+        url: "https://isem-infd.mendoza.edu.ar/sitio/capacitacion/"
+    },
+    // Instituto de Educación Física 9-016 Dr. Jorge E. Coll (IEF 9-016)
+    {
+        title: "Profesorado de Educación Física",
+        institution: "IEF 9-016 Dr. Jorge E. Coll",
+        description: "Formación para profesores de educación física en diversas sedes.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ief9-016.edu.ar/profesorado-de-educacion-fisica/"
+    },
+    {
+        title: "Tecnicatura Superior en Actividades de Montaña, Conservación de la Naturaleza, Preparación Física",
+        institution: "IEF 9-016 Dr. Jorge E. Coll",
+        description: "Tecnicaturas con enfoque en actividad física y medio ambiente.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ief9-016.edu.ar/"
+    },
+    {
+        title: "Formación Profesional Guardavidas y Náuticos Andinos",
+        institution: "IEF 9-016 Dr. Jorge E. Coll",
+        description: "Capacitaciones profesionales para actividades acuáticas y de montaña.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ief9-016.edu.ar/"
+    },
+    // I.E.S. Nº 9-011 - Del Atuel
+    {
+        title: "Profesorado de Educación Secundaria en Biología, Geografía, Historia, Informática, Inglés, Lengua y Literatura, Matemática",
+        institution: "I.E.S. Nº 9-011 - Del Atuel",
+        description: "Formación docente en diversas disciplinas, predominantemente presencial.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ies9011-infd.mendoza.edu.ar/sitio/oferta-educativa/"
+    },
+    {
+        title: "Tecnicatura Superior en Turismo & Hotelería, Gastronomía",
+        institution: "I.E.S. Nº 9-011 - Del Atuel",
+        description: "Tecnicaturas en el sector turístico y gastronómico.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ies9011-infd.mendoza.edu.ar/sitio/oferta-educativa/"
+    },
+    // Instituto Tecnológico Universitario (ITU) Mendoza
+    {
+        title: "Tecnicatura Universitaria en Desarrollo de Software, Electricidad y Sistemas de Control Industriales, Gestión de Empresas, Higiene y Seguridad en el Trabajo, Logística y Transporte, Mantenimiento e Instalaciones Industriales, Marketing, Producción Industrial y Automatización, Redes de Datos y Telecomunicaciones",
+        institution: "Instituto Tecnológico Universitario (ITU) Mendoza",
+        description: "Tecnicaturas universitarias que responden a las demandas productivas, con cursado regular y vespertino.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://itu.uncuyo.edu.ar/estudios/"
+    },
+    {
+        title: "Cursos y Talleres (ej. Manejo de Autoelevadores, Gestión de Costos Logísticos)",
+        institution: "Instituto Tecnológico Universitario (ITU) Mendoza",
+        description: "Cursos de capacitación, algunos ofrecidos en modalidad virtual.",
+        modality: "mixta",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://itu.uncuyo.edu.ar/cursos/"
+    },
+    // IES N° 9-001 Gral. José de San Martín
+    {
+        title: "Profesorado de Biología, Educación Especial, Educación Inicial, Educación Primaria, Geografía, Historia, Inglés, Lengua y Literatura, para Técnicos",
+        institution: "IES N° 9-001 Gral. José de San Martín",
+        description: "Variedad de profesorados con apoyo de campus virtual.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ens9001-infd.mendoza.edu.ar/sitio/"
+    },
+    {
+        title: "Tecnicatura en Administración Pública, Comunicación Social, Diseño de Indumentaria, Textil y Accesorios, Higiene y Seguridad Laboral",
+        institution: "IES N° 9-001 Gral. José de San Martín",
+        description: "Tecnicaturas con apoyo de campus virtual.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ens9001-infd.mendoza.edu.ar/sitio/"
+    },
+    // IES 9-002 Tomás Godoy Cruz
+    {
+        title: "Profesorado de Inglés, Artes Visuales, Educación Secundaria en Biología, Educación Especial, Educación Inicial, Educación Primaria, Educación Secundaria en Física, Educación Secundaria en Lengua y Literatura, Educación Secundaria en Matemática, Educación Secundaria en Química",
+        institution: "IES 9-002 Tomás Godoy Cruz",
+        description: "Amplia oferta de profesorados en diversas especialidades.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ens9002-infd.mendoza.edu.ar/sitio/carreras/"
+    },
+    {
+        title: "Tecnicatura en Producción Artística y Artesanal",
+        institution: "IES 9-002 Tomás Godoy Cruz",
+        description: "Formación técnica en el ámbito artístico.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ens9002-infd.mendoza.edu.ar/sitio/carreras/"
+    },
+    // Instituto Superior de Formación Docente y Técnica N° 9-003 Mercedes Tomasa de San Martín de Balcarce
+    {
+        title: "Profesorado de Educación Primaria, Educación Inicial, Educación Especial, para Técnicos (PROTEC)",
+        institution: "IES 9-003 Mercedes Tomasa de San Martín de Balcarce",
+        description: "Programas de formación docente.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ens9003-infd.mendoza.edu.ar/sitio/carreras/"
+    },
+    {
+        title: "Tecnicatura Superior en Locución de Radio y Televisión, Acompañamiento Terapéutico",
+        institution: "IES 9-003 Mercedes Tomasa de San Martín de Balcarce",
+        description: "Tecnicaturas en comunicación y salud.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ens9003-infd.mendoza.edu.ar/sitio/carreras/"
+    },
+    // ISTEEC Mendoza
+    {
+        title: "Administración de Empresas, Administración Pública, Comercio Internacional y Aduana, Contabilidad, Enología e Industria de los Alimentos, Logística, Marketing, Turismo y Hotelería, Recursos Humanos, FP3 Logística Minera",
+        institution: "ISTEEC Mendoza",
+        description: "Carreras técnicas presenciales con enfoque en estudios económicos y técnicos. Cuentan con Campus Virtual.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://isteec.edu.ar/"
+    },
 
-// --- INSTITUTOS SUPERIORES PRIVADOS ---
-// Instituto Superior Juan Gutenberg Mendoza
-{
-    title: "Tecnicatura Superior en Diseño Multimedial",
-    institution: "Instituto Superior Juan Gutenberg",
-    description: "Carrera pionera en Tecnología Gráfica y Diseño Multimedial. El ingreso es mixto (virtual asincrónico y presencial).",
-    modality: "mixta",
-    institutionType: "instituto superior",
-    managementType: "privada",
-    url: "https://institutojgutenberg.edu.ar/"
-},
-{
-    title: "Cursos Online (LSA, Administrativo Veterinaria, Secretariado Médico)",
-    institution: "Instituto Superior Juan Gutenberg",
-    description: "Cursos cortos completamente en línea para diversas áreas.",
-    modality: "virtual",
-    institutionType: "instituto superior",
-    managementType: "privada",
-    url: "https://institutojgutenberg.edu.ar/cursos-online-gutenberg/"
-},
-// IAV - Instituto Argentino de Ventas Mendoza
-{
-    title: "Curso de Ejecutivo de Atención Telefónica, Ejecutivo de Venta en Terreno, Ejecutivo de Venta Telefónica, Supervisión y Liderazgo",
-    institution: "IAV - Instituto Argentino de Ventas",
-    description: "Formación profesional especializada en el ámbito de las ventas.",
-    modality: "presencial", // Implícito presencial/mixto
-    institutionType: "instituto superior",
-    managementType: "privada",
-    url: "https://www.educaedu.com.ar/centros/iav--instituto-argentino-de-ventas-uni2721"
-},
-// Instituto Intercultural Lenguas Extranjeras - Español Mendoza
-{
-    title: "Cursos de Lenguas Extranjeras",
-    institution: "Instituto Intercultural Lenguas Extranjeras - Español Mendoza",
-    description: "Cursos de idiomas (ej. Español como Lengua Extranjera) y preparación para exámenes IELTS.",
-    modality: "presencial", // Implícito presencial con posible flexibilidad.
-    institutionType: "instituto superior",
-    managementType: "privada",
-    url: "https://www.intercultural.com.ar/"
-},
-// **NUEVAS CARRERAS AGREGADAS - TECNOLÓGICAS 2025**
-{
-    title: "Tecnicatura Superior en Ciencias de Datos e Inteligencia Artificial",
-    institution: "IES (Varios institutos de gestión estatal)",
-    description: "Nueva carrera tecnológica lanzada para el ciclo lectivo 2025, enfocada en análisis de datos y IA.",
-    modality: "presencial",
-    institutionType: "instituto superior",
-    managementType: "pública",
-    url: "https://superior-infd.mendoza.edu.ar/"
-},
-{
-    title: "Tecnicatura Superior en Desarrollo de Software",
-    institution: "IES (Varios institutos de gestión estatal)",
-    description: "Nueva carrera tecnológica lanzada para el ciclo lectivo 2025, especializada en programación y desarrollo.",
-    modality: "presencial",
-    institutionType: "instituto superior",
-    managementType: "pública",
-    url: "https://superior-infd.mendoza.edu.ar/"
-},
-{
-    title: "Tecnicatura Superior en Redes y Ciberseguridad",
-    institution: "IES (Varios institutos de gestión estatal)",
-    description: "Nueva carrera tecnológica lanzada para el ciclo lectivo 2025, enfocada en seguridad informática y redes.",
-    modality: "presencial",
-    institutionType: "instituto superior",
-    managementType: "pública",
-    url: "https://superior-infd.mendoza.edu.ar/"
-},
+    // --- INSTITUTOS SUPERIORES PRIVADOS ---
+    // Instituto Superior Juan Gutenberg Mendoza
+    {
+        title: "Tecnicatura Superior en Diseño Multimedial",
+        institution: "Instituto Superior Juan Gutenberg",
+        description: "Carrera pionera en Tecnología Gráfica y Diseño Multimedial. El ingreso es mixto (virtual asincrónico y presencial).",
+        modality: "mixta",
+        institutionType: "instituto superior",
+        managementType: "privada",
+        url: "https://institutojgutenberg.edu.ar/"
+    },
+    {
+        title: "Cursos Online (LSA, Administrativo Veterinaria, Secretariado Médico)",
+        institution: "Instituto Superior Juan Gutenberg",
+        description: "Cursos cortos completamente en línea para diversas áreas.",
+        modality: "virtual",
+        institutionType: "instituto superior",
+        managementType: "privada",
+        url: "https://institutojgutenberg.edu.ar/cursos-online-gutenberg/"
+    },
+    // IAV - Instituto Argentino de Ventas Mendoza
+    {
+        title: "Curso de Ejecutivo de Atención Telefónica, Ejecutivo de Venta en Terreno, Ejecutivo de Venta Telefónica, Supervisión y Liderazgo",
+        institution: "IAV - Instituto Argentino de Ventas",
+        description: "Formación profesional especializada en el ámbito de las ventas.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "privada",
+        url: "https://www.educaedu.com.ar/centros/iav--instituto-argentino-de-ventas-uni2721"
+    },
+    // Instituto Intercultural Lenguas Extranjeras - Español Mendoza
+    {
+        title: "Cursos de Lenguas Extranjeras",
+        institution: "Instituto Intercultural Lenguas Extranjeras - Español Mendoza",
+        description: "Cursos de idiomas (ej. Español como Lengua Extranjera) y preparación para exámenes IELTS.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "privada",
+        url: "https://www.intercultural.com.ar/"
+    },
 
+    // **NUEVAS CARRERAS AGREGADAS - TECNOLÓGICAS 2025**
+    {
+        title: "Tecnicatura Superior en Ciencias de Datos e Inteligencia Artificial",
+        institution: "IES (Varios institutos de gestión estatal)",
+        description: "Nueva carrera tecnológica lanzada para el ciclo lectivo 2025, enfocada en análisis de datos y IA.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://superior-infd.mendoza.edu.ar/"
+    },
+    {
+        title: "Tecnicatura Superior en Desarrollo de Software",
+        institution: "IES (Varios institutos de gestión estatal)",
+        description: "Nueva carrera tecnológica lanzada para el ciclo lectivo 2025, especializada en programación y desarrollo.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://superior-infd.mendoza.edu.ar/"
+    },
+    {
+        title: "Tecnicatura Superior en Redes y Ciberseguridad",
+        institution: "IES (Varios institutos de gestión estatal)",
+        description: "Nueva carrera tecnológica lanzada para el ciclo lectivo 2025, enfocada en seguridad informática y redes.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://superior-infd.mendoza.edu.ar/"
+    },
+
+    // --- TECNICATURAS SUPERIORES ---
+    {
+        title: "Tecnicatura Superior en Enología e Industrias de los Alimentos",
+        institution: "Instituto de Educación Superior N° 9-029",
+        description: "Formación técnica integral para la producción y control de calidad en enología e industrias alimentarias. Ubicada en la sede Ugarteche (Jauretche). Inscripción ciclo 2025 cerrada por cupos completos.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://www.ies9029.edu.ar/"
+    },
+    {
+        title: "Tecnicatura Superior en Gestión de Recursos Humanos",
+        institution: "Instituto de Educación Superior N° 9-029",
+        description: "Formación técnica para la administración y desarrollo del capital humano en organizaciones. Se imparte en la sede Central (Marianetti). Todas las carreras del IES 9-029 requieren asistencia física. Inscripción ciclo 2025 cerrada por cupos completos.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://www.ies9029.edu.ar/"
+    },
+    {
+        title: "Tecnicatura Superior en Higiene y Seguridad con Orientación en Calidad y Medio Ambiente",
+        institution: "Instituto de Educación Superior N° 9-029",
+        description: "Formación técnica para la prevención de riesgos laborales, gestión de la seguridad, calidad y protección ambiental. Se ha impartido en la Sede Central (Marianetti). Inscripción ciclo 2025 cerrada por cupos completos.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://www.ies9029.edu.ar/"
+    },
+    {
+        title: "Tecnicatura Superior en Turismo y Hotelería",
+        institution: "Instituto de Educación Superior N° 9-029",
+        description: "Formación técnica para la gestión y operación en el sector turístico y hotelero. Se ha impartido en la Sede Luján (Torres). Inscripción ciclo 2025 cerrada por cupos completos.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://www.ies9029.edu.ar/"
+    },
+
+    // --- PROFESORADOS ---
+    {
+        title: "Profesorado de Educación Primaria",
+        institution: "Instituto de Educación Superior N° 9-029",
+        description: "Formación docente para la enseñanza en el nivel primario. Inscripción ciclo 2025 cerrada por cupos completos.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://www.ies9029.edu.ar/"
+    },
+    {
+        title: "Profesorado de Educación Secundaria en Geografía",
+        institution: "Instituto de Educación Superior N° 9-029",
+        description: "Formación docente especializada en la enseñanza de Geografía para el nivel secundario. Inscripción ciclo 2025 cerrada por cupos completos.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://www.ies9029.edu.ar/"
+    },
+    {
+        title: "Profesorado para Técnicos/as",
+        institution: "Instituto de Educación Superior N° 9-029",
+        description: "Programa de formación docente dirigido a profesionales con títulos técnicos que deseen habilitarse para la enseñanza. Inscripciones cerradas y sin fecha definida para nuevos comienzos.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://www.ies9029.edu.ar/"
+    },
+
+    // --- ESPECIALIZACIONES ---
+    {
+        title: "Especialización Docente de Nivel Superior en Educación Permanente de Jóvenes y Adultos con Perspectiva de Promoción y Protección de Derechos",
+        institution: "Instituto de Educación Superior N° 9-029",
+        description: "Programa de posgrado docente de 400 horas reloj (2 años) diseñado para profesionales de la educación. Se ofrece a distancia. Inscripción ciclo 2025 cerrada por cupos completos.",
+        modality: "a distancia",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://www.ies9029.edu.ar/inscripciones-epja2025/"
+    },
+
+    // --- FORMACIÓN PROFESIONAL ---
+    {
+        title: "Formación Profesional de Nivel III en Maestro Cervecero",
+        institution: "Instituto de Educación Superior N° 9-029",
+        description: "Programa de formación profesional que capacita en el arte y la ciencia de la elaboración de cerveza. Inscripción ciclo 2025 cerrada por cupos completos.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://www.ies9029.edu.ar/"
+    }
 ];
