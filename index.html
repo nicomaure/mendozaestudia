@@ -17,6 +17,12 @@
             overflow-x: hidden; /* Evitar desbordamiento horizontal */
         }
 
+        /* Estilos para el encabezado */
+        .sticky-header {
+            position: relative;
+            top: 0;
+        }
+
         /* Animación de entrada para las tarjetas */
         @keyframes fadeInUp {
             from {
@@ -80,7 +86,7 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al hacer hover */
         }
 
-        /* Estilos para los botones primarios */
+        /* Estilos para los botones */
         .button-primary {
             background-color: #6366f1; /* Índigo vibrante */
             color: white;
@@ -88,403 +94,195 @@
             border-radius: 0.75rem; /* Bordes redondeados */
             transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
             font-weight: 600; /* Texto audaz */
-            display: inline-block; /* Para centrar el texto si es necesario */
-            text-decoration: none; /* Quitar subrayado del enlace */
-            width: fit-content; /* Ajustar al contenido */
+            display: inline-block;
+            text-decoration: none;
+            width: fit-content;
             align-self: center; /* Centrar el botón dentro de la tarjeta flex */
-            box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3); /* Sombra para el botón */
+            box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
         }
         .button-primary:hover {
-            background-color: #4f46e5; /* Índigo un poco más oscuro al pasar el ratón */
-            transform: translateY(-2px); /* Pequeño efecto de "presión" */
-            box-shadow: 0 6px 12px rgba(79, 70, 229, 0.4); /* Sombra más pronunciada al hover */
+            background-color: #4f46e5; /* Índigo un poco más oscuro */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(79, 70, 229, 0.4);
         }
 
-        /* Estilos para el encabezado pegajoso (sticky header) */
-        .sticky-header {
-            position: relative;
-            top: 0;
-            z-index: 1000;
-            background-color: #f0f4f8; /* Coincide con el fondo del body */
-            padding-bottom: 1.5rem; /* Espacio debajo del header */
-            border-bottom: 1px solid #e2e8f0; /* Línea separadora */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Sombra para el efecto sticky */
-            border-radius: 0 0 1.5rem 1.5rem; /* Bordes redondeados en la parte inferior */
-            background-image: linear-gradient(to right, #6366f1, #8b5cf6); /* Degradado de fondo */
-            color: white; /* Color de texto blanco para el encabezado */
+        .button-secondary {
+            background-color: #10b981; /* Verde esmeralda */
+            color: white;
+            padding: 0.75rem 1.75rem;
+            border-radius: 0.75rem;
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
         }
-        .sticky-header h1 {
-            color: white; /* Asegurar que el título principal sea blanco */
-        }
-        .sticky-header .filter-input,
-        .sticky-header .filter-select {
-            background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente blanco para filtros */
-            border-color: rgba(255, 255, 255, 0.5); /* Borde más suave */
-            color: #4f46e5; /* Texto del filtro */
-        }
-        .sticky-header .filter-input::placeholder {
-            color: #888; /* Color del placeholder */
-        }
-        .sticky-header .filter-input:focus,
-        .sticky-header .filter-select:focus {
-            border-color: #ffffff; /* Borde blanco al enfocar */
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5); /* Sombra de enfoque blanca */
-        }
-        /* Hover effect for filter selects */
-        .filter-select:hover {
-            background-color: #e0e7ff; /* Ligeramente más oscuro al hover */
-            border-color: #6366f1; /* Resaltar borde */
+        .button-secondary:hover {
+            background-color: #059669; /* Verde esmeralda más oscuro */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(5, 150, 105, 0.4);
         }
 
-        /* Estilos para el grupo de filtros */
-        .filter-group {
-            background-color: #ffffff;
-            border-radius: 1rem;
-            padding: 1.5rem;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-            display: flex;
-            flex-wrap: wrap; /* Permite que los filtros se envuelvan en pantallas pequeñas */
-            gap: 1rem; /* Espacio entre los filtros */
-            align-items: center;
-            justify-content: center; /* Centra los filtros en el contenedor */
-            border: 1px solid #e2e8f0; /* Borde sutil para el grupo de filtros */
+        .card-content {
+            flex-grow: 1; /* Permite que el contenido crezca */
         }
 
-        /* Estilos para los selectores e inputs de filtro */
-        .filter-select, .filter-input {
-            flex-grow: 1; /* Permite que los elementos crezcan */
-            min-width: 150px; /* Ancho mínimo para cada filtro */
-            padding: 0.85rem 1.25rem;
-            border-radius: 0.75rem; /* Bordes redondeados */
-            border: 2px solid #a78bfa; /* Borde violeta suave */
-            background-color: #f5f3ff; /* Fondo ligeramente morado */
-            color: #4f46e5; /* Color de texto índigo */
-            font-weight: 500;
-            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
-        }
-        .filter-select:focus, .filter-input:focus {
-            outline: none;
-            border-color: #6366f1; /* Borde más oscuro al enfocar */
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3); /* Sombra de enfoque */
-        }
-
-        /* Estilos para el mensaje de "no resultados" */
-        .no-results {
-            text-align: center;
-            color: #6b7280;
-            font-size: 1.25rem; /* text-xl */
-            margin-top: 3rem;
-            padding: 2rem;
-            background-color: #fff;
-            border-radius: 1rem;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
-            font-weight: 500;
-        }
-
-        /* Estilos para los títulos de sección (h2) */
-        h2 {
-            position: relative; /* Para poder usar pseudo-elementos */
-            padding-bottom: 0.75rem;
-        }
-        h2::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 80px; /* Ancho de la línea de acento */
-            height: 4px; /* Grosor de la línea */
-            background-color: #8b5cf6; /* Color violeta para la línea */
-            border-radius: 2px;
-        }
-
-        /* Estilos para el texto y enlaces del footer */
+        /* Estilos para el footer personalizado */
         .footer-text {
-            color: #888;
+            color: #4a5568; /* Un gris más oscuro para el texto del footer */
         }
         .footer-link {
-            color: #6366f1;
-            transition: color 0.2s ease-in-out;
-        }
-        .footer-link:hover {
-            color: #4f46e5;
-        }
-
-        /* Responsive adjustments for smaller screens */
-        @media (max-width: 768px) {
-            .sticky-header {
-                flex-direction: column; /* Apilar elementos en pantallas pequeñas */
-                align-items: center;
-                padding-top: 1.5rem; /* Ajustar padding superior en móvil */
-                padding-bottom: 1rem; /* Ajustar padding inferior en móvil */
-            }
-            .sticky-header h1 {
-                font-size: 2.25rem; /* Ajustar tamaño del título principal en móvil */
-                margin-bottom: 0.5rem; /* Espacio debajo del título */
-            }
-            .filter-group {
-                flex-direction: column; /* Apilar filtros verticalmente */
-                width: 100%;
-                padding: 1rem; /* Reducir padding en móvil */
-            }
-            .filter-select, .filter-input {
-                min-width: unset; /* Quitar min-width en móviles */
-                width: 100%; /* Ocupar el ancho completo */
-            }
-            main p {
-                font-size: 1rem; /* Reducir tamaño de texto en main paragraph */
-                margin-bottom: 2rem; /* Ajustar margen inferior */
-            }
-            h2 {
-                font-size: 1.75rem; /* Ajustar tamaño de los títulos de sección en móvil */
-            }
-            .card {
-                padding: 1.25rem; /* Reducir padding de las tarjetas */
-                min-height: 220px; /* Ajustar altura mínima de las tarjetas */
-            }
-            .button-primary {
-                padding: 0.6rem 1.5rem; /* Ajustar padding del botón */
-                font-size: 0.9rem; /* Ajustar tamaño de fuente del botón */
-            }
+            color: #6366f1; /* Color índigo para los enlaces, a juego con el tema */
+            font-weight: 500;
         }
     </style>
 </head>
-<body class="antialiased">
-    <div class="min-h-screen flex flex-col items-center py-0 px-4 sm:px-6 lg:px-8">
-
-        <!-- Encabezado pegajoso para búsqueda y filtros -->
-        <div class="w-full max-w-7xl sticky-header flex flex-col md:flex-row justify-between items-center py-6 sm:py-10 mb-4 sm:mb-8 gap-3 sm:gap-6">
-            <div class="text-center md:text-left">
-                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight bounce-in">Mendoza Estudia <span class="text-purple-300">🎓</span></h1>
-                <!-- La frase redundante ha sido eliminada -->
-            </div>
-            <div class="filter-group w-full md:w-auto p-3 sm:p-6 gap-2 sm:gap-4">
-                <input type="text" id="searchInput" onkeyup="filterCourses()" placeholder="Buscar carrera o institución..."
-                       class="filter-input">
-                <select id="modalityFilter" onchange="filterCourses()"
-                        class="filter-select">
-                    <option value="all">Todas las modalidades</option>
-                    <option value="presencial">Presencial</option>
-                    <option value="virtual">Virtual</option>
-                    <option value="mixta">Mixta</option>
-                </select>
-                <select id="institutionTypeFilter" onchange="filterCourses()"
-                        class="filter-select">
-                    <option value="all">Todos los tipos de institución</option>
-                    <option value="universidad">Universidad</option>
-                    <option value="instituto superior">Instituto Superior</option>
-                </select>
-                <select id="managementTypeFilter" onchange="filterCourses()"
-                        class="filter-select">
-                    <option value="all">Toda la gestión</option>
-                    <option value="pública">Pública</option>
-                    <option value="privada">Privada</option>
-                </select>
-            </div>
-        </div>
-
-        <main class="w-full max-w-7xl mt-8">
-            <p class="text-center text-gray-600 mb-12 text-lg sm:text-xl font-light leading-relaxed">
-                ¡Explora la oferta educativa de Mendoza 2025 y encuentra la carrera perfecta para tu futuro!
+<body class="p-4 md:p-8">
+    <!-- Contenedor principal -->
+    <div class="container mx-auto max-w-7xl">
+        <!-- Encabezado con la clase 'sticky-header' restaurada -->
+        <header class="sticky-header mb-12 text-center p-6">
+            <h1 class="bounce-in text-4xl md:text-6xl font-extrabold text-indigo-700 mb-4">
+                Mendoza Estudia
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                Tu guía completa para encontrar la carrera perfecta en Mendoza. Explorá, filtrá y descubrí tu futuro.
             </p>
 
-            <!-- Sección de Carreras Presenciales -->
-            <section class="mb-12" id="presencialSection">
-                <h2 class="text-4xl font-bold text-indigo-700 mb-8 mt-10">Carreras Presenciales</h2>
-                <div id="presencialCourses" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Las tarjetas de carrera presencial se generarán aquí dinámicamente -->
-                </div>
-                <div id="noPresencialResults" class="no-results" style="display: none;">
-                    No se encontraron carreras presenciales que coincidan con la búsqueda.
-                </div>
-            </section>
+            <!-- Contenedor para filtros y botón de test vocacional -->
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                <!-- Filtros -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 bg-white p-6 rounded-2xl shadow-md border border-gray-200">
+                    <input type="text" id="search" placeholder="Buscar por palabra clave..." class="col-span-1 sm:col-span-2 lg:col-span-4 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 transition w-full">
 
-            <!-- Sección de Carreras Mixtas -->
-            <section class="mb-12" id="mixtaSection">
-                <h2 class="text-4xl font-bold text-indigo-700 mb-8 mt-10">Carreras Mixtas</h2>
-                <div id="mixtaCourses" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Las tarjetas de carrera mixta se generarán aquí dinámicamente -->
-                </div>
-                <div id="noMixtaResults" class="no-results" style="display: none;">
-                    No se encontraron carreras mixtas que coincidan con la búsqueda.
-                </div>
-            </section>
+                    <select id="modality-filter" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 transition">
+                        <option value="all">Modalidad</option>
+                        <option value="presencial">Presencial</option>
+                        <option value="virtual">Virtual</option>
+                        <option value="mixta">Mixta</option>
+                    </select>
 
-            <!-- Sección de Carreras Virtuales -->
-            <section id="virtualSection">
-                <h2 class="text-4xl font-bold text-indigo-700 mb-8 mt-10">Carreras Virtuales</h2>
-                <div id="virtualCourses" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Las tarjetas de carrera virtual se generarán aquí dinámicamente -->
+                    <select id="institution-type-filter" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 transition">
+                        <option value="all">Tipo de Institución</option>
+                        <option value="universidad">Universidad</option>
+                        <option value="instituto superior">Instituto Superior</option>
+                    </select>
+
+                    <select id="management-type-filter" class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 transition">
+                        <option value="all">Tipo de Gestión</option>
+                        <option value="pública">Pública</option>
+                        <option value="privada">Privada</option>
+                    </select>
+
+                    <button id="reset-filters" class="p-3 bg-gray-600 text-white rounded-lg font-semibold hover:bg-gray-700 transition">Limpiar Filtros</button>
                 </div>
-                <div id="noVirtualResults" class="no-results" style="display: none;">
-                    No se encontraron carreras virtuales que coincidan con la búsqueda.
+
+                <!-- Botón para Test Vocacional -->
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-200 text-center">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-3">¿No estás seguro qué estudiar?</h3>
+                    <p class="text-gray-600 mb-4">¡Nuestro test vocacional puede ayudarte!</p>
+                    <a href="Test-Vocacional.html" class="button-secondary">
+                        Hacer el Test
+                    </a>
                 </div>
-            </section>
+            </div>
+        </header>
+
+        <!-- Contenedor de las tarjetas de carreras -->
+        <main id="careers-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Las tarjetas de carrera se insertarán aquí dinámicamente -->
         </main>
+
+        <!-- Footer restaurado a la versión solicitada -->
+        <footer class="w-full max-w-7xl mx-auto mt-16 py-10 text-center text-gray-500 text-base border-t border-gray-200 bg-white rounded-t-xl shadow-inner">
+            <h3 class="text-2xl font-extrabold text-indigo-700 mb-3">Mendoza Estudia</h3>
+            <p class="mb-2 footer-text">Un proyecto de código abierto y colaborativo para la comunidad mendocina.</p>
+            <p class="mb-1 footer-text">Desarrollado por: Nicolás Maure y Nahuel Palacio</p>
+            <p class="mb-4 footer-text">Contacto: <a href="https://linktr.ee/nicomaure/" target="_blank" class="footer-link hover:underline">Nicolás Maure</a> - <a href="https://palacionahuel.com/" target="_blank" class="footer-link hover:underline">Nahuel Palacio</a></p>
+            <p class="footer-text">Mendoza, Argentina</p>
+        </footer>
     </div>
 
-    <!-- Footer -->
-    <footer class="w-full max-w-7xl mx-auto mt-16 py-10 text-center text-gray-500 text-base border-t border-gray-200 bg-white rounded-t-xl shadow-inner">
-        <h3 class="text-2xl font-extrabold text-indigo-700 mb-3">Mendoza Estudia</h3>
-        <p class="mb-2 footer-text">Un proyecto de código abierto y colaborativo para la comunidad mendocina.</p>
-        <p class="mb-1 footer-text">Desarrollado por: Nicolás Maure y Nahuel Palacio</p>
-        <p class="mb-4 footer-text">Contacto: <a href="https://linktr.ee/nicomaure/" class="footer-link hover:underline">Nicolás Maure</a> - <a href="https://palacionahuel.com/" class="footer-link hover:underline">Nahuel Palacio</a></p>
-        <p class="footer-text">Mendoza, Argentina</p>
-    </footer>
-
     <script type="module">
-        // Importar los datos de las carreras desde el archivo externo careers.js
+        // Importar los datos de las carreras desde el archivo careers.js
         import { careersData } from './careers.js';
 
-        // Hacer la función filterCourses globalmente accesible
-        window.filterCourses = filterCourses;
+        // Elementos del DOM
+        const container = document.getElementById('careers-container');
+        const searchInput = document.getElementById('search');
+        const modalityFilter = document.getElementById('modality-filter');
+        const institutionTypeFilter = document.getElementById('institution-type-filter');
+        const managementTypeFilter = document.getElementById('management-type-filter');
+        const resetFiltersButton = document.getElementById('reset-filters');
 
-        /**
-         * Función para renderizar las tarjetas de carrera en las secciones correspondientes.
-         * Aplica animaciones de entrada a las tarjetas.
-         * @param {Array<Object>} filteredCareers - Un arreglo de objetos de carrera filtrados.
-         */
-        function renderCareers(filteredCareers) {
-            console.log('renderCareers llamada con', filteredCareers.length, 'carreras filtradas.');
+        // Función para renderizar las tarjetas de carreras
+        function renderCareers(careers) {
+            container.innerHTML = ''; // Limpiar el contenedor antes de renderizar
 
-            const presencialContainer = document.getElementById('presencialCourses');
-            const mixtaContainer = document.getElementById('mixtaCourses');
-            const virtualContainer = document.getElementById('virtualCourses');
+            if (careers.length === 0) {
+                container.innerHTML = `<p class="text-center text-gray-500 col-span-full">No se encontraron carreras que coincidan con tu búsqueda.</p>`;
+                return;
+            }
 
-            // Limpiar contenedores de tarjetas antes de renderizar
-            presencialContainer.innerHTML = '';
-            mixtaContainer.innerHTML = '';
-            virtualContainer.innerHTML = '';
+            careers.forEach((career, index) => {
+                const card = document.createElement('div');
+                card.className = 'card bg-white p-6 fade-in-up';
+                card.style.setProperty('--delay', `${index * 50}ms`); // Asignar retraso para animación escalonada
 
-            // Ocultar todos los mensajes de "no resultados" y todas las secciones al inicio de cada renderizado
-            document.getElementById('noPresencialResults').style.display = 'none';
-            document.getElementById('noMixtaResults').style.display = 'none';
-            document.getElementById('noVirtualResults').style.display = 'none';
-
-            document.getElementById('presencialSection').style.display = 'none';
-            document.getElementById('mixtaSection').style.display = 'none';
-            document.getElementById('virtualSection').style.display = 'none';
-
-            let presencialCount = 0;
-            let mixtaCount = 0;
-            let virtualCount = 0;
-
-            // Llenar los contenedores con las carreras filtradas y contar por modalidad
-            filteredCareers.forEach((career, index) => {
-                const cardHtml = `
-                    <div class="course-card bg-white rounded-xl shadow-lg p-6 flex flex-col justify-between card fade-in-up"
-                         style="--delay: ${index * 0.05}s;"
-                         data-modality="${career.modality}"
-                         data-institution-type="${career.institutionType}"
-                         data-management-type="${career.managementType}">
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">${career.title}</h3>
-                            <p class="text-indigo-600 font-medium mb-1">${career.institution}</p>
-                            <p class="text-gray-600 text-sm mb-3">Modalidad: <span class="capitalize font-semibold text-purple-700">${career.modality}</span></p>
-                            <p class="text-gray-700 text-sm mb-4 flex-grow">${career.description}</p>
-                        </div>
-                        <a href="${career.url}" target="_blank" class="button-primary text-center mt-4">
-                            Inscribirse / Más Info
-                        </a>
+                card.innerHTML = `
+                    <div class="card-content">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">${career.title}</h3>
+                        <p class="text-indigo-600 font-semibold mb-3">${career.institution}</p>
+                        <p class="text-gray-600 mb-4">${career.description}</p>
+                    </div>
+                    <div class="mt-auto pt-4 text-center">
+                        <a href="${career.url}" target="_blank" class="button-primary">Más Info</a>
                     </div>
                 `;
-                // Se agrupan 'virtual' y 'a distancia' bajo la misma sección "Virtual"
-                if (career.modality === 'presencial') {
-                    presencialContainer.innerHTML += cardHtml;
-                    presencialCount++;
-                } else if (career.modality === 'mixta') {
-                    mixtaContainer.innerHTML += cardHtml;
-                    mixtaCount++;
-                } else if (career.modality === 'virtual' || career.modality === 'a distancia') {
-                    virtualContainer.innerHTML += cardHtml;
-                    virtualCount++;
-                }
+                container.appendChild(card);
             });
-
-            console.log('Contador de carreras por modalidad: Presencial:', presencialCount, 'Mixta:', mixtaCount, 'Virtual:', virtualCount);
-
-            const selectedModalityFilter = document.getElementById('modalityFilter').value;
-            console.log('Filtro de Modalidad Seleccionado:', selectedModalityFilter);
-
-            // Lógica para mostrar/ocultar secciones y mensajes de "no resultados"
-            // Las secciones solo se mostrarán si:
-            // 1. El filtro de modalidad es 'all' O coincide con la modalidad de la sección, Y
-            // 2. Hay carreras en esa sección O el filtro de modalidad es específico de esa sección (para mostrar el mensaje de "no resultados")
-
-            // Sección Presencial
-            if (selectedModalityFilter === 'all' || selectedModalityFilter === 'presencial') {
-                document.getElementById('presencialSection').style.display = 'block';
-                if (presencialCount === 0) {
-                    document.getElementById('noPresencialResults').style.display = 'block';
-                }
-            }
-
-            // Sección Mixta
-            if (selectedModalityFilter === 'all' || selectedModalityFilter === 'mixta') {
-                document.getElementById('mixtaSection').style.display = 'block';
-                if (mixtaCount === 0) {
-                    document.getElementById('noMixtaResults').style.display = 'block';
-                }
-            }
-
-            // Sección Virtual
-            if (selectedModalityFilter === 'all' || selectedModalityFilter === 'virtual') {
-                document.getElementById('virtualSection').style.display = 'block';
-                if (virtualCount === 0) {
-                    document.getElementById('noVirtualResults').style.display = 'block';
-                }
-            }
         }
 
-        /**
-         * Función principal para filtrar las carreras según los criterios de búsqueda y los filtros seleccionados.
-         */
-        function filterCourses() {
-            console.log('filterCourses llamada');
-            const searchInput = document.getElementById('searchInput').value.toLowerCase();
-            const modalityFilter = document.getElementById('modalityFilter').value;
-            const institutionTypeFilter = document.getElementById('institutionTypeFilter').value;
-            const managementTypeFilter = document.getElementById('managementTypeFilter').value;
-
-            console.log('Valores de los filtros:');
-            console.log('  Búsqueda:', searchInput);
-            console.log('  Modalidad:', modalityFilter);
-            console.log('  Tipo Institución:', institutionTypeFilter);
-            console.log('  Tipo Gestión:', managementTypeFilter);
+        // Función para filtrar y renderizar
+        function filterAndRender() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const modality = modalityFilter.value;
+            const institutionType = institutionTypeFilter.value;
+            const managementType = managementTypeFilter.value;
 
             const filteredCareers = careersData.filter(career => {
-                const title = career.title.toLowerCase();
-                const institution = career.institution.toLowerCase();
-                const description = career.description.toLowerCase();
-                const modality = career.modality;
-                const institutionType = career.institutionType;
-                const managementType = career.managementType;
+                const searchMatch = career.title.toLowerCase().includes(searchTerm) ||
+                                    career.institution.toLowerCase().includes(searchTerm) ||
+                                    career.description.toLowerCase().includes(searchTerm);
 
-                const matchesSearch = title.includes(searchInput) || institution.includes(searchInput) || description.includes(searchInput);
-                const matchesModality = modalityFilter === 'all' ||
-                                        (modalityFilter === 'virtual' && (modality === 'virtual' || modality === 'a distancia')) ||
-                                        (modality === modalityFilter);
+                const modalityMatch = modality === 'all' || career.modality === modality;
+                const institutionTypeMatch = institutionType === 'all' || career.institutionType === institutionType;
+                const managementTypeMatch = managementType === 'all' || career.managementType === managementType;
 
-                const matchesInstitutionType = institutionTypeFilter === 'all' || institutionType === institutionTypeFilter;
-                const matchesManagementType = managementTypeFilter === 'all' || managementType === managementTypeFilter;
-
-                return matchesSearch && matchesModality && matchesInstitutionType && matchesManagementType;
+                return searchMatch && modalityMatch && institutionTypeMatch && managementTypeMatch;
             });
-
-            console.log('Número de carreras filtradas (antes de renderizar):', filteredCareers.length);
 
             renderCareers(filteredCareers);
         }
 
+        // Función para limpiar filtros
+        function resetFilters() {
+            searchInput.value = '';
+            modalityFilter.value = 'all';
+            institutionTypeFilter.value = 'all';
+            managementTypeFilter.value = 'all';
+            filterAndRender();
+        }
+
+        // Event Listeners
+        searchInput.addEventListener('input', filterAndRender);
+        modalityFilter.addEventListener('change', filterAndRender);
+        institutionTypeFilter.addEventListener('change', filterAndRender);
+        managementTypeFilter.addEventListener('change', filterAndRender);
+        resetFiltersButton.addEventListener('click', resetFilters);
+
         // Renderizar todas las carreras al cargar la página inicialmente
         document.addEventListener('DOMContentLoaded', () => {
-            console.log('DOM completamente cargado. Renderizando carreras iniciales.');
             renderCareers(careersData);
-
-            // Aplicar animación al título principal al cargar la página
-            const mainTitle = document.querySelector('.bounce-in');
-            if (mainTitle) {
-                mainTitle.classList.add('animate__animated', 'animate__bounceIn');
-            }
         });
     </script>
 </body>
