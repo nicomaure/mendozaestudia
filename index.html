@@ -1,326 +1,380 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mendoza Estudia: Tu Futuro Académico</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        /* Estilos generales del cuerpo y fuente */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* Un color de fondo suave y cálido */
-            color: #1a202c; /* Color de texto por defecto oscuro para contraste */
-            overflow-x: hidden; /* Evitar desbordamiento horizontal */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mendoza Estudia: Tu Futuro Académico</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-        /* Estilos del encabezado con gradiente (de la versión anterior) */
-        .header-gradient {
-            background-image: linear-gradient(to right, #6366f1, #8b5cf6);
-            color: white;
-            padding: 2rem 1.5rem;
-            border-radius: 0 0 1.5rem 1.5rem; /* Bordes redondeados en la parte inferior */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-        .header-gradient h1 {
-            color: white;
-        }
-        .header-gradient p {
-            color: #e0e7ff; /* Un color más suave para el párrafo del encabezado */
-        }
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s ease;
+      background-color: #f0f4f8;
+      color: #1a202c;
+      overflow-x: hidden;
+    }
+
+    body[data-theme="dark"] {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    .dark-mode-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.5rem 1rem;
+      background: #ccc;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    body[data-theme="dark"] .card {
+      background-color: #1e1e1e;
+      color: #f0f0f0;
+    }
+
+    body[data-theme="dark"] .filter-group {
+      background-color: #1e1e2f;
+      border-color: #2d2d3a;
+    }
+
+    body[data-theme="dark"] .footer-text {
+      color: #cccccc;
+    }
+
+    body[data-theme="dark"] .footer-link {
+      color: #a78bfa;
+    }
+
+    body[data-theme="dark"] .filter-input,
+    body[data-theme="dark"] .filter-select {
+      background-color: #2a2a3a;
+      color: #e0e0e0;
+      border-color: #a78bfa;
+    }
+
+    body[data-theme="dark"] .filter-input:focus,
+    body[data-theme="dark"] .filter-select:focus {
+      box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.3);
+    }
+
+    .header-gradient {
+      background-image: linear-gradient(to right, #6366f1, #8b5cf6);
+      color: white;
+      padding: 2rem 1.5rem;
+      border-radius: 0 0 1.5rem 1.5rem;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-gradient h1 {
+      color: white;
+    }
+
+    .header-gradient p {
+      color: #e0e7ff;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.5s ease-out forwards;
+      animation-delay: var(--delay);
+    }
+
+    @keyframes bounceIn {
+      0%, 20%, 40%, 60%, 80%, 100% {
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      }
+      0% {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+      }
+      20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+      }
+      40% {
+        transform: scale3d(0.9, 0.9, 0.9);
+      }
+      60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+      }
+      80% {
+        transform: scale3d(0.97, 0.97, 0.97);
+      }
+      100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+      }
+    }
+
+    .bounce-in {
+      animation: bounceIn 1s forwards;
+    }
+
+    .card {
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-height: 250px;
+      background-color: white;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-content {
+      flex-grow: 1;
+    }
+
+    .button-primary {
+      background-color: #6366f1;
+      color: white;
+      padding: 0.75rem 1.75rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      text-decoration: none;
+      width: fit-content;
+      align-self: center;
+      box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
+    }
+
+    .button-primary:hover {
+      background-color: #4f46e5;
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
+      background-color: #10b981;
+      color: white;
+      padding: 0.75rem 1.75rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+    }
+
+    .button-secondary:hover {
+      background-color: #059669;
+      transform: translateY(-2px);
+    }
+
+    .filter-group {
+      background-color: #ffffff;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e2e8f0;
+    }
+
+    .filter-select, .filter-input {
+      width: 100%;
+      padding: 0.85rem 1.25rem;
+      border-radius: 0.75rem;
+      border: 2px solid #a78bfa;
+      background-color: #f5f3ff;
+      color: #4f46e5;
+      font-weight: 500;
+    }
+
+    .filter-select:focus, .filter-input:focus {
+      outline: none;
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+    }
+
+    .filter-select:hover, .filter-input:hover {
+      background-color: #e0e7ff;
+      border-color: #6366f1;
+    }
+
+    .footer-custom {
+    background-color: #ffffff;
+    color: #4a5568;
+    border-color: #e2e8f0;
+    }
+
+    body[data-theme="dark"] .footer-custom {
+    background-color: #1a1a1a;
+    color: #cccccc;
+    border-color: #333;
+    }
 
 
-        /* Animación de entrada para las tarjetas */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .footer-text {
+      color: #4a5568;
+    }
 
-        .fade-in-up {
-            animation: fadeInUp 0.5s ease-out forwards;
-            animation-delay: var(--delay); /* Usar variable CSS para el retraso */
-        }
-
-        /* Animación para el título principal */
-        @keyframes bounceIn {
-            0%, 20%, 40%, 60%, 80%, 100% {
-                transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-            }
-            0% {
-                opacity: 0;
-                transform: scale3d(0.3, 0.3, 0.3);
-            }
-            20% {
-                transform: scale3d(1.1, 1.1, 1.1);
-            }
-            40% {
-                transform: scale3d(0.9, 0.9, 0.9);
-            }
-            60% {
-                opacity: 1;
-                transform: scale3d(1.03, 1.03, 1.03);
-            }
-            80% {
-                transform: scale3d(0.97, 0.97, 0.97);
-            }
-            100% {
-                opacity: 1;
-                transform: scale3d(1, 1, 1);
-            }
-        }
-        .bounce-in {
-            animation: bounceIn 1s forwards;
-        }
-
-        /* Estilos para las tarjetas de carrera */
-        .card {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            border-radius: 1rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            min-height: 250px;
-        }
-        .card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        .card-content {
-            flex-grow: 1;
-        }
-
-        /* Estilos para los botones */
-        .button-primary {
-            background-color: #6366f1;
-            color: white;
-            padding: 0.75rem 1.75rem;
-            border-radius: 0.75rem;
-            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-            font-weight: 600;
-            display: inline-block;
-            text-decoration: none;
-            width: fit-content;
-            align-self: center;
-            box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
-        }
-        .button-primary:hover {
-            background-color: #4f46e5;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(79, 70, 229, 0.4);
-        }
-        .button-secondary {
-            background-color: #10b981;
-            color: white;
-            padding: 0.75rem 1.75rem;
-            border-radius: 0.75rem;
-            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-            font-weight: 600;
-            text-decoration: none;
-            box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
-        }
-        .button-secondary:hover {
-            background-color: #059669;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(5, 150, 105, 0.4);
-        }
-
-        /* Estilos para los filtros (de la versión anterior) */
-        .filter-group {
-            background-color: #ffffff;
-            border-radius: 1rem;
-            padding: 1.5rem;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-            border: 1px solid #e2e8f0;
-        }
-        .filter-select, .filter-input {
-            width: 100%;
-            padding: 0.85rem 1.25rem;
-            border-radius: 0.75rem;
-            border: 2px solid #a78bfa;
-            background-color: #f5f3ff;
-            color: #4f46e5;
-            font-weight: 500;
-            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
-        }
-        .filter-select:focus, .filter-input:focus {
-            outline: none;
-            border-color: #6366f1;
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
-        }
-        .filter-select:hover, .filter-input:hover {
-            background-color: #e0e7ff;
-            border-color: #6366f1;
-        }
-
-        /* Estilos para el footer */
-        .footer-text {
-            color: #4a5568;
-        }
-        .footer-link {
-            color: #6366f1;
-            font-weight: 500;
-        }
-    </style>
+    .footer-link {
+      color: #6366f1;
+      font-weight: 500;
+    }
+  </style>
 </head>
 <body class="p-4 md:p-8">
-    <!-- Contenedor principal -->
-    <div class="container mx-auto max-w-7xl">
-        
-        <!-- Encabezado con el estilo de la versión anterior -->
-        <header class="header-gradient mb-12 text-center">
-            <h1 class="bounce-in text-4xl md:text-6xl font-extrabold mb-4">
-                Mendoza Estudia <span class="text-purple-300">🎓</span>
-            </h1>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">
-                Tu guía completa para encontrar la carrera perfecta en Mendoza.
-            </p>
-        </header>
+  <button class="dark-mode-toggle" onclick="toggleDarkMode()">☀️🌙</button>
 
-        <!-- Contenedor para filtros y botón de test vocacional -->
-        <div class="flex flex-col lg:flex-row items-start justify-center gap-6 mb-12">
-            <!-- Filtros con el estilo de la versión anterior -->
-            <div class="filter-group grid grid-cols-1 sm:grid-cols-2 gap-4 w-full lg:w-2/3">
-                <input type="text" id="search" placeholder="Buscar por palabra clave..." class="filter-input col-span-1 sm:col-span-2">
+  <div class="container mx-auto max-w-7xl">
+    <header class="header-gradient mb-12 text-center">
+      <h1 class="bounce-in text-4xl md:text-6xl font-extrabold mb-4">
+        Mendoza Estudia <span class="text-purple-300">🎓</span>
+      </h1>
+      <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">
+        Tu guía completa para encontrar la carrera perfecta en Mendoza.
+      </p>
+    </header>
 
-                <select id="modality-filter" class="filter-select">
-                    <option value="all">Modalidad</option>
-                    <option value="presencial">Presencial</option>
-                    <option value="virtual">Virtual</option>
-                    <option value="mixta">Mixta</option>
-                </select>
+    <div class="flex flex-col lg:flex-row items-start justify-center gap-6 mb-12">
+      <div class="filter-group grid grid-cols-1 sm:grid-cols-2 gap-4 w-full lg:w-2/3">
+        <input type="text" id="search" placeholder="Buscar por palabra clave..." class="filter-input col-span-1 sm:col-span-2" />
+        <select id="modality-filter" class="filter-select">
+          <option value="all">Modalidad</option>
+          <option value="presencial">Presencial</option>
+          <option value="virtual">Virtual</option>
+          <option value="mixta">Mixta</option>
+        </select>
+        <select id="institution-type-filter" class="filter-select">
+          <option value="all">Tipo de Institución</option>
+          <option value="universidad">Universidad</option>
+          <option value="instituto superior">Instituto Superior</option>
+        </select>
+        <select id="management-type-filter" class="filter-select">
+          <option value="all">Tipo de Gestión</option>
+          <option value="pública">Pública</option>
+          <option value="privada">Privada</option>
+        </select>
+        <button id="reset-filters" class="filter-input bg-gray-600 text-white font-semibold hover:bg-gray-700 transition">Limpiar Filtros</button>
+      </div>
 
-                <select id="institution-type-filter" class="filter-select">
-                    <option value="all">Tipo de Institución</option>
-                    <option value="universidad">Universidad</option>
-                    <option value="instituto superior">Instituto Superior</option>
-                </select>
-
-                <select id="management-type-filter" class="filter-select">
-                    <option value="all">Tipo de Gestión</option>
-                    <option value="pública">Pública</option>
-                    <option value="privada">Privada</option>
-                </select>
-
-                <button id="reset-filters" class="filter-input bg-gray-600 text-white font-semibold hover:bg-gray-700 transition">Limpiar Filtros</button>
-            </div>
-
-            <!-- Botón para Test Vocacional con el estilo de la versión anterior -->
-            <div class="filter-group text-center w-full lg:w-1/3">
-                <h3 class="text-lg font-semibold text-gray-800 mb-3">¿No estás seguro qué estudiar?</h3>
-                <p class="text-gray-600 mb-4">¡Nuestro test vocacional puede ayudarte!</p>
-                <a href="Test-Vocacional.html" class="button-secondary inline-block">
-                    Hacer el Test
-                </a>
-            </div>
-        </div>
-
-        <!-- Contenedor de las tarjetas de carreras -->
-        <main id="careers-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Las tarjetas de carrera se insertarán aquí dinámicamente -->
-        </main>
-
-        <!-- Footer -->
-        <footer class="w-full max-w-7xl mx-auto mt-16 py-10 text-center text-gray-500 text-base border-t border-gray-200 bg-white rounded-t-xl shadow-inner">
-            <h3 class="text-2xl font-extrabold text-indigo-700 mb-3">Mendoza Estudia</h3>
-            <p class="mb-2 footer-text">Un proyecto de código abierto y colaborativo para la comunidad mendocina.</p>
-            <p class="mb-1 footer-text">Desarrollado por: Nicolás Maure y Nahuel Palacio</p>
-            <p class="mb-4 footer-text">Contacto: <a href="https://linktr.ee/nicomaure/" target="_blank" class="footer-link hover:underline">Nicolás Maure</a> - <a href="https://palacionahuel.com/" target="_blank" class="footer-link hover:underline">Nahuel Palacio</a></p>
-            <p class="footer-text">Mendoza, Argentina</p>
-        </footer>
+      <div class="filter-group text-center w-full lg:w-1/3">
+        <h3 class="text-lg font-semibold text-gray-800 mb-3">¿No estás seguro qué estudiar?</h3>
+        <p class="text-gray-600 mb-4">¡Nuestro test vocacional puede ayudarte!</p>
+        <a href="Test-Vocacional.html" class="button-secondary inline-block">Hacer el Test</a>
+      </div>
     </div>
 
-    <script type="module">
-        // Importar los datos de las carreras desde el archivo careers.js
-        import { careersData } from './careers.js';
+    <main id="careers-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Carreras cargadas dinámicamente -->
+    </main>
 
-        // Elementos del DOM
-        const container = document.getElementById('careers-container');
-        const searchInput = document.getElementById('search');
-        const modalityFilter = document.getElementById('modality-filter');
-        const institutionTypeFilter = document.getElementById('institution-type-filter');
-        const managementTypeFilter = document.getElementById('management-type-filter');
-        const resetFiltersButton = document.getElementById('reset-filters');
+    <footer class="w-full max-w-7xl mx-auto mt-16 py-10 text-center text-base border-t rounded-t-xl shadow-inner footer-custom">
+      <h3 class="text-2xl font-extrabold text-indigo-700 mb-3">Mendoza Estudia</h3>
+      <p class="mb-2 footer-text">Un proyecto de código abierto y colaborativo para la comunidad mendocina.</p>
+      <p class="mb-1 footer-text">Desarrollado por: Nicolás Maure y Nahuel Palacio</p>
+      <p class="mb-4 footer-text">Contacto: <a href="https://linktr.ee/nicomaure/" target="_blank" class="footer-link hover:underline">Nicolás Maure</a> - <a href="https://palacionahuel.com/" target="_blank" class="footer-link hover:underline">Nahuel Palacio</a></p>
+      <p class="footer-text">Mendoza, Argentina</p>
+    </footer>
+  </div>
 
-        // Función para renderizar las tarjetas de carreras
-        function renderCareers(careers) {
-            container.innerHTML = ''; // Limpiar el contenedor antes de renderizar
+  <!-- Script de carreras (modular, como ya tenés) -->
+  <script type="module">
+    import { careersData } from './careers.js';
 
-            if (careers.length === 0) {
-                container.innerHTML = `<p class="text-center text-gray-500 col-span-full">No se encontraron carreras que coincidan con tu búsqueda.</p>`;
-                return;
-            }
+    const container = document.getElementById('careers-container');
+    const searchInput = document.getElementById('search');
+    const modalityFilter = document.getElementById('modality-filter');
+    const institutionTypeFilter = document.getElementById('institution-type-filter');
+    const managementTypeFilter = document.getElementById('management-type-filter');
+    const resetFiltersButton = document.getElementById('reset-filters');
 
-            careers.forEach((career, index) => {
-                const card = document.createElement('div');
-                card.className = 'card bg-white p-6 fade-in-up';
-                card.style.setProperty('--delay', `${index * 50}ms`); // Asignar retraso para animación escalonada
+    function renderCareers(careers) {
+      container.innerHTML = '';
+      if (careers.length === 0) {
+        container.innerHTML = `<p class="text-center text-gray-500 col-span-full">No se encontraron carreras que coincidan con tu búsqueda.</p>`;
+        return;
+      }
 
-                card.innerHTML = `
-                    <div class="card-content">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">${career.title}</h3>
-                        <p class="text-indigo-600 font-semibold mb-3">${career.institution}</p>
-                        <p class="text-gray-600 mb-4">${career.description}</p>
-                    </div>
-                    <div class="mt-auto pt-4 text-center">
-                        <a href="${career.url}" target="_blank" class="button-primary">Más Info</a>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
+      careers.forEach((career, index) => {
+        const card = document.createElement('div');
+        card.className = 'card p-6 fade-in-up';
+        card.style.setProperty('--delay', `${index * 50}ms`);
+        card.innerHTML = `
+          <div class="card-content">
+            <h3 class="text-xl font-bold mb-2">${career.title}</h3>
+            <p class="text-indigo-600 font-semibold mb-3">${career.institution}</p>
+            <p class="mb-4">${career.description}</p>
+          </div>
+          <div class="mt-auto pt-4 text-center">
+            <a href="${career.url}" target="_blank" class="button-primary">Más Info</a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
 
-        // Función para filtrar y renderizar
-        function filterAndRender() {
-            const searchTerm = searchInput.value.toLowerCase();
-            const modality = modalityFilter.value;
-            const institutionType = institutionTypeFilter.value;
-            const managementType = managementTypeFilter.value;
+    function filterAndRender() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const modality = modalityFilter.value;
+      const institutionType = institutionTypeFilter.value;
+      const managementType = managementTypeFilter.value;
 
-            const filteredCareers = careersData.filter(career => {
-                const searchMatch = career.title.toLowerCase().includes(searchTerm) ||
-                                    career.institution.toLowerCase().includes(searchTerm) ||
-                                    career.description.toLowerCase().includes(searchTerm);
+      const filtered = careersData.filter(career => {
+        const searchMatch = career.title.toLowerCase().includes(searchTerm) || career.institution.toLowerCase().includes(searchTerm) || career.description.toLowerCase().includes(searchTerm);
+        const modalityMatch = modality === 'all' || career.modality === modality;
+        const institutionMatch = institutionType === 'all' || career.institutionType === institutionType;
+        const managementMatch = managementType === 'all' || career.managementType === managementType;
+        return searchMatch && modalityMatch && institutionMatch && managementMatch;
+      });
 
-                const modalityMatch = modality === 'all' || career.modality === modality;
-                const institutionTypeMatch = institutionType === 'all' || career.institutionType === institutionType;
-                const managementTypeMatch = managementType === 'all' || career.managementType === managementType;
+      renderCareers(filtered);
+    }
 
-                return searchMatch && modalityMatch && institutionTypeMatch && managementTypeMatch;
-            });
+    function resetFilters() {
+      searchInput.value = '';
+      modalityFilter.value = 'all';
+      institutionTypeFilter.value = 'all';
+      managementTypeFilter.value = 'all';
+      filterAndRender();
+    }
 
-            renderCareers(filteredCareers);
-        }
+    searchInput.addEventListener('input', filterAndRender);
+    modalityFilter.addEventListener('change', filterAndRender);
+    institutionTypeFilter.addEventListener('change', filterAndRender);
+    managementTypeFilter.addEventListener('change', filterAndRender);
+    resetFiltersButton.addEventListener('click', resetFilters);
 
-        // Función para limpiar filtros
-        function resetFilters() {
-            searchInput.value = '';
-            modalityFilter.value = 'all';
-            institutionTypeFilter.value = 'all';
-            managementTypeFilter.value = 'all';
-            filterAndRender();
-        }
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCareers(careersData);
+    });
+  </script>
 
-        // Event Listeners
-        searchInput.addEventListener('input', filterAndRender);
-        modalityFilter.addEventListener('change', filterAndRender);
-        institutionTypeFilter.addEventListener('change', filterAndRender);
-        managementTypeFilter.addEventListener('change', filterAndRender);
-        resetFiltersButton.addEventListener('click', resetFilters);
+  <!-- Script de MODO OSCURO -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.setAttribute('data-theme', 'dark');
+    }
 
-        // Renderizar todas las carreras al cargar la página inicialmente
-        document.addEventListener('DOMContentLoaded', () => {
-            renderCareers(careersData);
-        });
-    </script>
+    function toggleDarkMode() {
+      const isDark = document.body.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        document.body.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.body.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+  </script>
 </body>
 </html>
