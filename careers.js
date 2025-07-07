@@ -348,6 +348,114 @@ export const careersData = [
         managementType: "privada",
         url: "https://isem-infd.mendoza.edu.ar/sitio/capacitacion/"
     },
+    // IES 9-006 (Rivadavia)
+    {
+        title: "Profesorado de Educación Especial",
+        institution: "IES 9-006 (Rivadavia)",
+        description: "Formación docente especializada en educación inclusiva con enfoque en discapacidad.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://superior-infd.mendoza.edu.ar/"
+    },
+    {
+        title: "Tecnicatura en Interpretación de Lengua de Señas",
+        institution: "IES 9-006 (Rivadavia)",
+        description: "Formación técnica para intérpretes de lengua de señas argentina.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://superior-infd.mendoza.edu.ar/"
+    },
+    
+    // IES de San Rafael
+    {
+        title: "Tecnicatura Superior en Gastronomía",
+        institution: "IES San Rafael",
+        description: "Formación técnica en artes culinarias y gestión gastronómica.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://superior-infd.mendoza.edu.ar/"
+    },
+    {
+        title: "Tecnicatura en Recursos Renovables",
+        institution: "IES San Rafael",
+        description: "Formación en gestión sostenible de recursos naturales.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://superior-infd.mendoza.edu.ar/"
+    },
+    
+    // IES Valle de Uco (Tupungato)
+    {
+        title: "Tecnicatura en Vitivinicultura",
+        institution: "IES Valle de Uco",
+        description: "Formación técnica especializada en producción vitivinícola.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://superior-infd.mendoza.edu.ar/"
+    },
+    {
+        title: "Profesorado de Educación Física",
+        institution: "IES Valle de Uco",
+        description: "Formación docente con especialización en actividades de montaña.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://superior-infd.mendoza.edu.ar/"
+    },
+    
+    // Nuevas carreras tecnológicas 2025
+    {
+        title: "Tecnicatura Superior en Ciencia de Datos e Inteligencia Artificial",
+        institution: "Varios IES públicos",
+        description: "Nueva carrera tecnológica lanzada para 2025, con enfoque en análisis avanzado de datos.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://superior-infd.mendoza.edu.ar/"
+    },
+    {
+        title: "Tecnicatura Superior en Redes y Ciberseguridad",
+        institution: "Varios IES públicos",
+        description: "Formación en seguridad informática y protección de redes digitales.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://superior-infd.mendoza.edu.ar/"
+    },
+    {
+        title: "Tecnicatura en Guía Náutico Andino",
+        institution: "IES 9-016",
+        description: "Formación especializada en navegación y actividades acuáticas en ambientes de montaña.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://ief9-016.edu.ar/"
+    },
+    {
+        title: "Formación Profesional en Maestro Cervecero",
+        institution: "IES 9-029",
+        description: "Capacitación intensiva en producción artesanal de cerveza.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://www.ies9029.edu.ar/"
+    },
+    
+    // Becas 2025 (como referencia)
+    {
+        title: "Becas para Profesorados en Matemática, Física y Química",
+        institution: "DGE Mendoza",
+        description: "Programa de incentivo económico para estudiantes de profesorados en áreas estratégicas.",
+        modality: "presencial",
+        institutionType: "instituto superior",
+        managementType: "pública",
+        url: "https://www.mendoza.edu.ar/becas-2025/"
+    },
     // Instituto de Educación Física 9-016 Dr. Jorge E. Coll (IEF 9-016)
     {
         title: "Profesorado de Educación Física",
@@ -732,5 +840,96 @@ export const careersData = [
         institutionType: "instituto superior",
         managementType: "pública",
         url: "https://ies9023-infd.mendoza.edu.ar/sitio/"
-    },    
+    },   
+    // NUEVAS CARRERAS 2025 – 27/06/
+  {
+    title: "Tecnicatura en Ciencia de Datos e Inteligencia Artificial",
+    institution: "DGE (varios IES provinciales)",
+    description: "Tecnológica de 3 años, primer año en Desarrollo en Software, luego especialización en Ciencia de Datos e IA.",
+    modality: "presencial",
+    institutionType: "instituto superior",
+    managementType: "pública",
+    url: "https://superior-infd.mendoza.edu.ar/sitio/la-dge-lanzo-la-nueva-carrera-de-ciencias-de-datos-e-inteligencia-artificial-para-2025/",
+  },
+  {
+    title: "Tecnicatura en Redes y Ciberseguridad",
+    institution: "DGE (varios IES provinciales)",
+    description: "Tecnológica de 3 años, con troncal Desarrollo en Software y especialización en Redes y Ciberseguridad.",
+    modality: "presencial",
+    institutionType: "instituto superior",
+    managementType: "pública",
+    url: "https://www.mendoza.gov.ar/prensa/educacion-superior-abrio-la-inscripcion-para-tres-nuevas-carreras-tecnologicas/",
+  },
+  {
+    title: "Tecnicatura en Desarrollo en Software (plan renovado)",
+    institution: "DGE (varios IES provinciales)",
+    description: "Plan renovado 2025, primer año común para luego elegir especialización en Software, IA o Redes.",
+    modality: "presencial",
+    institutionType: "instituto superior",
+    managementType: "pública",
+    url: "https://www.mendoza.gov.ar/prensa/educacion-superior-abrio-la-inscripcion-para-tres-nuevas-carreras-tecnologicas/",
+  },
+  {
+    title: "Asistente de Laboratorio Vitivinícola",
+    institution: "IES 9‑015 Valle de Uco",
+    description: "Certificación profesional, 8–12 meses, análisis químico y microbiológico de vinos.",
+    modality: "a distancia",
+    institutionType: "instituto superior",
+    managementType: "pública",
+    url: "https://www.iesvu.edu.ar",
+  },
+  {
+    title: "Analista Sensorial de Vinos",
+    institution: "IES 9‑015 Valle de Uco",
+    description: "Certificación profesional nivel III, evaluación organoléptica de vinos (1 año).",
+    modality: "a distancia",
+    institutionType: "instituto superior",
+    managementType: "pública",
+    url: "https://www.iesvu.edu.ar",
+  },
+  {
+    title: "Laboratorista Hídrico",
+    institution: "IES 9‑015 Valle de Uco",
+    description: "Certificación profesional, 8–12 meses, análisis químico y físico del agua.",
+    modality: "a distancia",
+    institutionType: "instituto superior",
+    managementType: "pública",
+    url: "https://www.iesvu.edu.ar",
+  },
+  {
+    title: "Administrador de Fincas Vitivinícolas",
+    institution: "IES 9‑015 Valle de Uco",
+    description: "Formación intermedia virtual, gestión integral de fincas vitivinícolas.",
+    modality: "a distancia",
+    institutionType: "instituto superior",
+    managementType: "pública",
+    url: "https://www.iesvu.edu.ar",
+  },
+  {
+    title: "Tecnicatura en Gastronomía",
+    institution: "IES San Rafael",
+    description: "Tecnológica 3 años, formación en cocina profesional con salida laboral.",
+    modality: "presencial",
+    institutionType: "instituto superior",
+    managementType: "pública",
+    url: "https://www.mendoza.gov.ar/prensa/la-dge-presento-cuatro-nuevas-carreras-de-nivel-superior-en-san-rafael/",
+  },
+  {
+    title: "Tecnicatura en Servicios Básicos y Construcciones Livianas",
+    institution: "IES San Rafael",
+    description: "Formación técnica en instalación y construcción liviana.",
+    modality: "presencial",
+    institutionType: "instituto superior",
+    managementType: "pública",
+    url: "https://www.mendoza.gov.ar/prensa/la-dge-presento-cuatro-nuevas-carreras-de-nivel-superior-en-san-rafael/",
+  },
+  {
+    title: "Tecnicatura en Recursos Humanos",
+    institution: "IES San Rafael",
+    description: "Formación técnica en gestión de personal y recursos humanos.",
+    modality: "presencial",
+    institutionType: "instituto superior",
+    managementType: "pública",
+    url: "https://www.mendoza.gov.ar/prensa/la-dge-presento-cuatro-nuevas-carreras-de-nivel-superior-en-san-rafael/",
+  }, 
 ];
